@@ -17,6 +17,11 @@ public class SpriteAtlasHelper : MonoBehaviour
 
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
+    }
+
+    private void OnEnable()
+    {
+
         if (_spriteRenderer.sprite)
         {
 
