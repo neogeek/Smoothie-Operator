@@ -31,16 +31,18 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9704b960517ca4d03a9d7514a67fdefb, type: 3}
-    totalSpriteSurfaceArea: 1152118
+    totalSpriteSurfaceArea: 1157842
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 8cc38df0f22614b8092bcabd2f4023b4, type: 3}
+  - {fileID: 21300000, guid: e27903427a1c54a24b1f526e3ba3f5a5, type: 3}
   - {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e, type: 3}
   - {fileID: 21300000, guid: 3b1824b2568144e9fbdd25cff5d1579e, type: 3}
   - {fileID: 21300000, guid: 910e21046b2464ab89acbbe0629ed029, type: 3}
   - {fileID: 21300000, guid: 10e09844eab2e462c89628b2fb29ac0a, type: 3}
   - {fileID: 21300000, guid: 809b7715d831b49a185b6af7f06f5b43, type: 3}
+  - {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   - {fileID: 21300000, guid: f6b27fa5b5416404782d390561933a93, type: 3}
   - {fileID: 21300000, guid: c00ffd662ee03443d84581e627430689, type: 3}
   - {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
@@ -58,11 +60,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6171429f0b73940b68cac8f7a55b780c, type: 3}
   m_PackedSpriteNamesToIndex:
   - person_1_face_1
+  - lives-1
   - fruit_5
   - person_3_face_2
   - person_3_face_1
   - person_1_arm_victory
   - person_1_face_2
+  - lives-0
   - fruit_2
   - truck_clouds
   - fruit_1
