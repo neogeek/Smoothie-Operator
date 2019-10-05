@@ -47,3 +47,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3058370959
     locked: 0
+  - name: Fruits
+    uniqueID: 2878897591
+    locked: 0
+  - name: Player
+    uniqueID: 2504980403
+    locked: 0
