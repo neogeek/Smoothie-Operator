@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         _horizontalMovement = Input.GetAxis("Horizontal");
 
         var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
-        
+
         if (hit)
         {
 
