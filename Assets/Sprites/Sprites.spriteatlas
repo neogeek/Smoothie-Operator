@@ -60,13 +60,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6171429f0b73940b68cac8f7a55b780c, type: 3}
   m_PackedSpriteNamesToIndex:
   - person_1_face_1
-  - lives-1
+  - life-lost
   - fruit_5
   - person_3_face_2
   - person_3_face_1
   - person_1_arm_victory
   - person_1_face_2
-  - lives-0
+  - life-available
   - fruit_2
   - truck_clouds
   - fruit_1
