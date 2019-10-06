@@ -28,9 +28,9 @@ public class FruitSpawner : MonoBehaviour
             var spawnedFruit = Instantiate(_fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)], gameObject.transform.position,
                 Quaternion.identity);
 
-            var rigidbody2d = spawnedFruit.GetComponent<Rigidbody2D>();
+            var rigidbody2D = spawnedFruit.GetComponent<Rigidbody2D>();
 
-            rigidbody2d.velocity = _spawnVelocity;
+            rigidbody2D.velocity = _spawnVelocity;
 
             yield return new WaitForSeconds(Random.Range(0.5f, 1));
 

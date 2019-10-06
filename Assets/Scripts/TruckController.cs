@@ -13,9 +13,9 @@ public class TruckController : MonoBehaviour
             return;
         }
 
-        var rigidbody2d = collision.gameObject.GetComponent<Rigidbody2D>();
+        var rigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        rigidbody2d.velocity = Vector2.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
+        rigidbody2D.velocity = Vector2.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
 
     }
 
