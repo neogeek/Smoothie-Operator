@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 34826796}
   - component: {fileID: 34826797}
+  - component: {fileID: 34826798}
   m_Layer: 5
   m_Name: Lives
   m_TagString: Untagged
@@ -184,6 +185,26 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &34826798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34826795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f28688c1ae145668f392961b8c968a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerReference: {fileID: 11400000, guid: 1cfe491b3d6344e718229ffc739e642f, type: 2}
+  _liveImages:
+  - {fileID: 1984603087}
+  - {fileID: 1953406952}
+  - {fileID: 1210056265}
+  _spriteLifeAvailable: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b,
+    type: 3}
+  _spriteLifeLost: {fileID: 21300000, guid: e27903427a1c54a24b1f526e3ba3f5a5, type: 3}
 --- !u!1 &151184435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,6 +1043,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteAtlas: {fileID: 4343727234628468602, guid: fd5bd4619681b4973aad194c87fd4ec5,
     type: 2}
+--- !u!1 &1486217575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486217577}
+  - component: {fileID: 1486217576}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1486217576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486217575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f19710287b74b91b7fa8f0cac058ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerReference: {fileID: 11400000, guid: e384777d64e314263902335086f2c34f, type: 2}
+--- !u!4 &1486217577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486217575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681002121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,8 +1098,9 @@ GameObject:
   - component: {fileID: 1681002122}
   - component: {fileID: 1681002124}
   - component: {fileID: 1681002123}
+  - component: {fileID: 1681002125}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Seconds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,6 +1167,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681002121}
   m_CullTransparentMesh: 0
+--- !u!114 &1681002125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681002121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798edbe84498b4243a008f49a60d499f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerReference: {fileID: 11400000, guid: e384777d64e314263902335086f2c34f, type: 2}
 --- !u!1 &1834621808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1191,7 @@ GameObject:
   - component: {fileID: 1834621809}
   - component: {fileID: 1834621811}
   - component: {fileID: 1834621810}
+  - component: {fileID: 1834621812}
   m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
@@ -1180,6 +1260,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834621808}
   m_CullTransparentMesh: 0
+--- !u!114 &1834621812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834621808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fc399d93387467a95222e66c77a6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerReference: {fileID: 11400000, guid: 1cfe491b3d6344e718229ffc739e642f, type: 2}
 --- !u!1 &1897517132
 GameObject:
   m_ObjectHideFlags: 0
