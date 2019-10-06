@@ -202,8 +202,6 @@ MonoBehaviour:
   - {fileID: 1984603087}
   - {fileID: 1953406952}
   - {fileID: 1210056265}
-  _spriteLifeAvailable: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b,
-    type: 3}
   _spriteLifeLost: {fileID: 21300000, guid: e27903427a1c54a24b1f526e3ba3f5a5, type: 3}
 --- !u!1 &151184435
 GameObject:
@@ -1013,7 +1011,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1476,7 +1474,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1566,7 +1564,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
