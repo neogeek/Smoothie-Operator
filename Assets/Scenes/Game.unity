@@ -202,6 +202,8 @@ MonoBehaviour:
   - {fileID: 1984603087}
   - {fileID: 1953406952}
   - {fileID: 1210056265}
+  _spriteLifeAvailable: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b,
+    type: 3}
   _spriteLifeLost: {fileID: 21300000, guid: e27903427a1c54a24b1f526e3ba3f5a5, type: 3}
 --- !u!1 &151184435
 GameObject:
@@ -883,8 +885,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -1017,8 +1017,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a61371872c9034f3587aae928f97baa9, type: 3}
     m_FontSize: 50
@@ -1110,8 +1108,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a61371872c9034f3587aae928f97baa9, type: 3}
     m_FontSize: 50
@@ -1346,8 +1342,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -1436,8 +1430,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
