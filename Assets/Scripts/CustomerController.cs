@@ -4,7 +4,7 @@ namespace SmoothieOperator
 {
 
     [SelectionBaseAttribute]
-    public class PersonController : MonoBehaviour
+    public class CustomerController : MonoBehaviour
     {
 
 #pragma warning disable CS0649
