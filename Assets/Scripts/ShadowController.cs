@@ -3,8 +3,7 @@ using UnityEngine;
 namespace SmoothieOperator
 {
 
-    [SelectionBaseAttribute]
-    public class FruitController : MonoBehaviour
+    public class ShadowController : MonoBehaviour
     {
 
 #pragma warning disable CS0649
