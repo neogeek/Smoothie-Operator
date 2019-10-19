@@ -4,14 +4,16 @@ using UnityEngine;
 public class PlayerReference : ScriptableObject
 {
 
-    public int lives = 3;
+    public const int STARTING_LIVES = 3;
+
+    public int lives = STARTING_LIVES;
 
     public int score;
 
     public void Reset()
     {
 
-        lives = 3;
+        lives = STARTING_LIVES;
 
         score = 0;
 
