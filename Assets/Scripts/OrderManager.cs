@@ -61,6 +61,27 @@ namespace SmoothieOperator
 
         }
 
+        public Sprite FruitNeededByCustomerNotOnAvailable(HashSet<GameObject> availableFruits)
+        {
+
+            var availableFruitSprites = availableFruits
+                .Select(f => f.GetComponent<SpriteRenderer>().sprite);
+
+            var orderFruitSprites = _customers.SelectMany(c => c.Value.fruits);
+
+            if (!orderFruitSprites.Any())
+            {
+
+                return null;
+
+            }
+
+            var fruitSprite = orderFruitSprites.Except(availableFruitSprites).ToArray().First();
+
+            return fruitSprite;
+
+        }
+
     }
 
 }

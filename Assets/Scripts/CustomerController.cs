@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace SmoothieOperator
 {
@@ -14,6 +17,8 @@ namespace SmoothieOperator
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
 
         private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
+
+        public ReadOnlyCollection<Sprite> fruits => Array.AsReadOnly(_order.fruits);
 
 #pragma warning disable CS0649
         [SerializeField]
