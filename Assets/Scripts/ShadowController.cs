@@ -31,6 +31,17 @@ namespace SmoothieOperator
 
         }
 
+        private void OnDrawGizmos()
+        {
+
+            Gizmos.color = Color.green;
+
+            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
+
+            Gizmos.DrawLine(gameObject.transform.position, hit.point);
+
+        }
+
     }
 
 }
