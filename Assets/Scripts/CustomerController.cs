@@ -14,15 +14,6 @@ namespace SmoothieOperator
         private Order _order;
 
         [SerializeField]
-        private GameObject _armsWait;
-
-        [SerializeField]
-        private GameObject _armsVictory;
-
-        [SerializeField]
-        private GameObject _orderBubble;
-
-        [SerializeField]
         private Sprite[] _fruitSprites;
 
         [SerializeField]
@@ -31,8 +22,6 @@ namespace SmoothieOperator
 
         private void Awake()
         {
-
-            _armsVictory.SetActive(false);
 
             _order = new Order
             {
