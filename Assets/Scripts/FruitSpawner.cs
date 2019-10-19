@@ -15,14 +15,7 @@ namespace SmoothieOperator
         private Vector3 _spawnVelocity;
 #pragma warning restore CS0649
 
-        private void Start()
-        {
-
-            StartCoroutine(SpawnFruits());
-
-        }
-
-        private IEnumerator SpawnFruits()
+        private IEnumerator Start()
         {
 
             while (true)
