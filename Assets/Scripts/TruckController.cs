@@ -3,7 +3,7 @@ using UnityEngine;
 public class TruckController : MonoBehaviour
 {
 
-    private LayerMask _fruitLayerMask => LayerMask.NameToLayer("Fruit");
+    private static LayerMask _fruitLayerMask => LayerMask.NameToLayer("Fruit");
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
