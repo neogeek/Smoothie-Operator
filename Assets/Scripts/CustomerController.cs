@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SmoothieOperator
 {
@@ -8,6 +10,10 @@ namespace SmoothieOperator
     [SelectionBaseAttribute]
     public class CustomerController : MonoBehaviour
     {
+
+        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
+
+        private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
 
 #pragma warning disable CS0649
         [SerializeField]
@@ -18,10 +24,17 @@ namespace SmoothieOperator
 
         [SerializeField]
         private SpriteRenderer[] _fruitSpriteRenderers;
+
+        [SerializeField]
+        private Text _timerTextComp;
 #pragma warning restore CS0649
 
-        private void Awake()
+        private int _timer = 60;
+
+        private IEnumerator Start()
         {
+
+            _timerTextComp.enabled = false;
 
             _order = new Order
             {
@@ -37,6 +50,24 @@ namespace SmoothieOperator
             {
 
                 _fruitSpriteRenderers[i].sprite = _order.fruits[i];
+
+            }
+
+            while (true)
+            {
+
+                yield return _delayTimer;
+
+                _timer -= 1;
+
+                if (_timer <= SECONDS_REMAINING_BEFORE_SHOWING_TIMER && !_timerTextComp.enabled)
+                {
+
+                    _timerTextComp.enabled = true;
+
+                }
+
+                _timerTextComp.text = _timer.ToString();
 
             }
 
