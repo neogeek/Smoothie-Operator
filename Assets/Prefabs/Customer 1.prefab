@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3067453415167826917}
   - component: {fileID: 3067453415167826906}
   m_Layer: 0
-  m_Name: person_face
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 3067453415948498206}
   - component: {fileID: 3067453415948498201}
   m_Layer: 0
-  m_Name: person_arm_victory
+  m_Name: Arm (Victory)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 3067453416150788973}
   - component: {fileID: 3067453416150788972}
   m_Layer: 0
-  m_Name: person_arms_wait
+  m_Name: Arm (Wait)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
