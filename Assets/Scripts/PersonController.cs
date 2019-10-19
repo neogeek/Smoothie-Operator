@@ -4,6 +4,7 @@ using UnityEngine;
 public class PersonController : MonoBehaviour
 {
 
+#pragma warning disable CS0649
     [SerializeField]
     private Order _order;
 
@@ -21,6 +22,7 @@ public class PersonController : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer[] _fruitSpriteRenderers;
+#pragma warning restore CS0649
 
     private void Awake()
     {
