@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9704b960517ca4d03a9d7514a67fdefb, type: 3}
-    totalSpriteSurfaceArea: 1160922
+    totalSpriteSurfaceArea: 1204488
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
@@ -60,6 +60,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e357628d504344f83aa2364addb2ad0f, type: 3}
   - {fileID: 21300000, guid: 4e318a7ec92de42ca8eeff45b9530db8, type: 3}
   - {fileID: 21300000, guid: 5b48beee968634c8f8b6f756ce86d00f, type: 3}
+  - {fileID: 21300000, guid: cb199f3f8a875424a8795051bdc1cf9b, type: 3}
   - {fileID: 21300000, guid: 898c687f4545941e686cc6ac8cd2f482, type: 3}
   - {fileID: 21300000, guid: 6171429f0b73940b68cac8f7a55b780c, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -85,6 +86,7 @@ SpriteAtlas:
   - person_2_arms_wait
   - fruit_highlight
   - blender
+  - blender_highlight
   - order_bubble
   - person_2_face_1
   m_Tag: Sprites
