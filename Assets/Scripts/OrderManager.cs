@@ -11,11 +11,13 @@ namespace SmoothieOperator
 
         private readonly WaitForSeconds _delayBetweenSpawningNewCustomers = new WaitForSeconds(1);
 
+#pragma warning disable CS0649
         [SerializeField]
         private Transform[] _customerTransforms;
 
         [SerializeField]
         private GameObject[] _customerPrefabs;
+#pragma warning restore CS0649
 
         private readonly Dictionary<Transform, CustomerController> _customers =
             new Dictionary<Transform, CustomerController>();
