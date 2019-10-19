@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SmoothieOperator
@@ -48,6 +50,13 @@ namespace SmoothieOperator
                 _fruitSpriteRenderers[i].sprite = _order.fruits[i];
 
             }
+
+        }
+
+        public bool CanFruitsFulfillOrder(IEnumerable<Sprite> fruits)
+        {
+
+            return _order.fruits.Except(fruits).ToArray().Length.Equals(0);
 
         }
 
