@@ -78,10 +78,10 @@ namespace SmoothieOperator
 
         }
 
-        public bool CanFruitsFulfillOrder(IEnumerable<Sprite> fruits)
+        public bool CanFruitsFulfillOrder(IEnumerable<Sprite> fruitsInBlender)
         {
 
-            return _order.fruits.Except(fruits).ToArray().Length.Equals(0);
+            return _order.fruits.Except(fruitsInBlender).ToArray().Length.Equals(0);
 
         }
 
