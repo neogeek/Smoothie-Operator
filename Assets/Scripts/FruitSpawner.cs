@@ -25,7 +25,8 @@ public class FruitSpawner : MonoBehaviour
         while (true)
         {
 
-            var spawnedFruit = Instantiate(_fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)], gameObject.transform.position,
+            var spawnedFruit = Instantiate(_fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)],
+                gameObject.transform.position,
                 Quaternion.identity);
 
             var rigidbody2D = spawnedFruit.GetComponent<Rigidbody2D>();

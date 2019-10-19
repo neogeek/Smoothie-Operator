@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
 
             _shadowTransform.position = hit.point;
 
-            _shadowTransform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
+            _shadowTransform.localScale =
+                Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
 
         }
 
