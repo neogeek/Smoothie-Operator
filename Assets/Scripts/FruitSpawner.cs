@@ -9,11 +9,13 @@ namespace SmoothieOperator
 
 #pragma warning disable CS0649
         [SerializeField]
-        private GameObject[] _fruitPrefabs;
+        private Transform[] _spawnTransforms;
 
         [SerializeField]
-        private Vector3 _spawnVelocity;
+        private GameObject[] _fruitPrefabs;
 #pragma warning restore CS0649
+
+        private GameObject[] _spawnedFruits;
 
         private IEnumerator Start()
         {
@@ -21,13 +23,15 @@ namespace SmoothieOperator
             while (true)
             {
 
+                var spawnTransform = _spawnTransforms[Random.Range(0, _spawnTransforms.Length)];
+
                 var spawnedFruit = Instantiate(_fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)],
-                    gameObject.transform.position,
+                    spawnTransform.position,
                     Quaternion.identity);
 
                 var rigidbody2D = spawnedFruit.GetComponent<Rigidbody2D>();
 
-                rigidbody2D.velocity = _spawnVelocity;
+                rigidbody2D.velocity = spawnTransform.right;
 
                 yield return new WaitForSeconds(Random.Range(0.5f, 1));
 
@@ -40,7 +44,13 @@ namespace SmoothieOperator
 
             Gizmos.color = Color.green;
 
-            Gizmos.DrawLine(gameObject.transform.position, gameObject.transform.position + _spawnVelocity);
+            for (var i = 0; i < _spawnTransforms.Length; i += 1)
+            {
+
+                Gizmos.DrawLine(_spawnTransforms[i].position,
+                    _spawnTransforms[i].position + _spawnTransforms[i].right);
+
+            }
 
         }
 
