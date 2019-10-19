@@ -1,51 +1,56 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LivesDisplay : MonoBehaviour
+namespace SmoothieOperator
 {
 
-#pragma warning disable CS0649
-    [SerializeField]
-    private PlayerReference _playerReference;
-
-    [SerializeField]
-    private Image[] _liveImages;
-
-    [SerializeField]
-    private Sprite _spriteLifeAvailable;
-
-    [SerializeField]
-    private Sprite _spriteLifeLost;
-#pragma warning restore CS0649
-
-    private void Update()
+    public class LivesDisplay : MonoBehaviour
     {
 
-        for (var i = 0; i < PlayerReference.STARTING_LIVES - _playerReference.lives; i += 1)
+#pragma warning disable CS0649
+        [SerializeField]
+        private PlayerReference _playerReference;
+
+        [SerializeField]
+        private Image[] _liveImages;
+
+        [SerializeField]
+        private Sprite _spriteLifeAvailable;
+
+        [SerializeField]
+        private Sprite _spriteLifeLost;
+#pragma warning restore CS0649
+
+        private void Update()
         {
 
-            if (_liveImages[i].sprite.Equals(_spriteLifeLost))
+            for (var i = 0; i < PlayerReference.STARTING_LIVES - _playerReference.lives; i += 1)
             {
-                continue;
+
+                if (_liveImages[i].sprite.Equals(_spriteLifeLost))
+                {
+                    continue;
+                }
+
+                _liveImages[i].gameObject.SetActive(false);
+                _liveImages[i].sprite = _spriteLifeLost;
+                _liveImages[i].gameObject.SetActive(true);
+
             }
 
-            _liveImages[i].gameObject.SetActive(false);
-            _liveImages[i].sprite = _spriteLifeLost;
-            _liveImages[i].gameObject.SetActive(true);
-
-        }
-
-        for (var i = PlayerReference.STARTING_LIVES - _playerReference.lives; i < _liveImages.Length; i += 1)
-        {
-
-            if (_liveImages[i].sprite.Equals(_spriteLifeAvailable))
+            for (var i = PlayerReference.STARTING_LIVES - _playerReference.lives; i < _liveImages.Length; i += 1)
             {
-                continue;
-            }
 
-            _liveImages[i].gameObject.SetActive(false);
-            _liveImages[i].sprite = _spriteLifeAvailable;
-            _liveImages[i].gameObject.SetActive(true);
+                if (_liveImages[i].sprite.Equals(_spriteLifeAvailable))
+                {
+                    continue;
+                }
+
+                _liveImages[i].gameObject.SetActive(false);
+                _liveImages[i].sprite = _spriteLifeAvailable;
+                _liveImages[i].gameObject.SetActive(true);
+
+            }
 
         }
 

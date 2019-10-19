@@ -1,21 +1,26 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerReference", menuName = "PlayerReference")]
-public class PlayerReference : ScriptableObject
+namespace SmoothieOperator
 {
 
-    public const int STARTING_LIVES = 3;
-
-    public int lives = STARTING_LIVES;
-
-    public int score;
-
-    public void Reset()
+    [CreateAssetMenu(fileName = "PlayerReference", menuName = "PlayerReference")]
+    public class PlayerReference : ScriptableObject
     {
 
-        lives = STARTING_LIVES;
+        public const int STARTING_LIVES = 3;
 
-        score = 0;
+        public int lives = STARTING_LIVES;
+
+        public int score;
+
+        public void Reset()
+        {
+
+            lives = STARTING_LIVES;
+
+            score = 0;
+
+        }
 
     }
 

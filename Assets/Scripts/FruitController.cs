@@ -1,28 +1,34 @@
 using UnityEngine;
 
-[SelectionBaseAttribute]
-public class FruitController : MonoBehaviour
+namespace SmoothieOperator
 {
 
-#pragma warning disable CS0649
-    [SerializeField]
-    private LayerMask _truckLayerMask;
-
-    [SerializeField]
-    private Transform _shadowTransform;
-#pragma warning restore CS0649
-
-    private void Update()
+    [SelectionBaseAttribute]
+    public class FruitController : MonoBehaviour
     {
 
-        var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
+#pragma warning disable CS0649
+        [SerializeField]
+        private LayerMask _truckLayerMask;
 
-        if (hit)
+        [SerializeField]
+        private Transform _shadowTransform;
+#pragma warning restore CS0649
+
+        private void Update()
         {
 
-            _shadowTransform.position = hit.point;
+            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
 
-            _shadowTransform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
+            if (hit)
+            {
+
+                _shadowTransform.position = hit.point;
+
+                _shadowTransform.localScale =
+                    Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
+
+            }
 
         }
 

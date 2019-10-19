@@ -1,8 +1,13 @@
 using UnityEngine;
 
-public struct Order
+namespace SmoothieOperator
 {
 
-    public Sprite[] fruits;
+    public struct Order
+    {
+
+        public Sprite[] fruits;
+
+    }
 
 }

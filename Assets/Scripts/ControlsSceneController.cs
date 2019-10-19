@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlsSceneController : MonoBehaviour
+namespace SmoothieOperator
 {
 
-    private void Update()
+    public class ControlsSceneController : MonoBehaviour
     {
 
-        if (Input.anyKeyDown)
+        private void Update()
         {
 
-            SceneManager.LoadScene("Game");
+            if (Input.anyKeyDown)
+            {
+
+                SceneManager.LoadScene("Game");
+
+            }
 
         }
 

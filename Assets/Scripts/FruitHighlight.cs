@@ -1,12 +1,17 @@
 using UnityEngine;
 
-public class FruitHighlight : MonoBehaviour
+namespace SmoothieOperator
 {
 
-    private void Update()
+    public class FruitHighlight : MonoBehaviour
     {
 
-        gameObject.transform.rotation = Quaternion.identity;
+        private void Update()
+        {
+
+            gameObject.transform.rotation = Quaternion.identity;
+
+        }
 
     }
 

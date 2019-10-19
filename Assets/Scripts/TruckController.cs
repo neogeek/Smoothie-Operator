@@ -1,21 +1,26 @@
 using UnityEngine;
 
-public class TruckController : MonoBehaviour
+namespace SmoothieOperator
 {
 
-    private static LayerMask _fruitLayerMask => LayerMask.NameToLayer("Fruit");
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class TruckController : MonoBehaviour
     {
 
-        if (!collision.gameObject.layer.Equals(_fruitLayerMask))
+        private static LayerMask _fruitLayerMask => LayerMask.NameToLayer("Fruit");
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            return;
+
+            if (!collision.gameObject.layer.Equals(_fruitLayerMask))
+            {
+                return;
+            }
+
+            var rigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            rigidbody2D.velocity = Vector2.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
+
         }
-
-        var rigidbody2D = collision.gameObject.GetComponent<Rigidbody2D>();
-
-        rigidbody2D.velocity = Vector2.Reflect(collision.relativeVelocity, collision.contacts[0].normal);
 
     }
 

@@ -1,15 +1,20 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TimerReference", menuName = "TimerReference")]
-public class TimerReference : ScriptableObject
+namespace SmoothieOperator
 {
 
-    public float timer;
-
-    public void Reset()
+    [CreateAssetMenu(fileName = "TimerReference", menuName = "TimerReference")]
+    public class TimerReference : ScriptableObject
     {
 
-        timer = 0;
+        public float timer;
+
+        public void Reset()
+        {
+
+            timer = 0;
+
+        }
 
     }
 
