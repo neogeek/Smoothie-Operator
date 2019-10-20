@@ -48,11 +48,11 @@ namespace SmoothieOperator
 
                 var fruitSpriteNeeded = _orderManager.FruitNeededByCustomerNotOnAvailable(_spawnedFruits);
 
-                if (fruitSpriteNeeded)
+                if (fruitSpriteNeeded != null)
                 {
 
                     fruitToSpawn = _fruitPrefabs.First(f =>
-                        f.GetComponent<SpriteRenderer>().sprite.Equals(fruitSpriteNeeded));
+                        f.GetComponent<SpriteRenderer>().sprite.name.StartsWith(fruitSpriteNeeded));
 
                 }
 

@@ -17,7 +17,7 @@ namespace SmoothieOperator
 
         private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
 
-        public IEnumerable<Sprite> fruits => Array.AsReadOnly(_order.fruits);
+        public IEnumerable<Sprite> fruits => _order.fruits.Length > 0 ? Array.AsReadOnly(_order.fruits) : null;
 
 #pragma warning disable CS0649
         [SerializeField]

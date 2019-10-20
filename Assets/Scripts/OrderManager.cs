@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SmoothieOperator
 {
@@ -28,14 +29,14 @@ namespace SmoothieOperator
             while (true)
             {
 
-                yield return _delayBetweenSpawningNewCustomers;
-
                 if (_customers.Count < _customerTransforms.Length)
                 {
 
                     SpawnNewCustomer();
 
                 }
+
+                yield return _delayBetweenSpawningNewCustomers;
 
             }
 
@@ -63,24 +64,24 @@ namespace SmoothieOperator
 
         }
 
-        public Sprite FruitNeededByCustomerNotOnAvailable(IEnumerable<GameObject> availableFruits)
+        public string FruitNeededByCustomerNotOnAvailable(IEnumerable<GameObject> availableFruits)
         {
 
-            var availableFruitSprites = availableFruits
-                .Select(f => f.GetComponent<SpriteRenderer>().sprite);
+            var availableFruitSpriteNames = availableFruits
+                .Select(f => f.GetComponent<SpriteRenderer>().sprite.name.Replace("(Clone)", ""));
 
-            var orderFruitSprites = _customers.SelectMany(c => c.Value.fruits);
+            var orderFruitSpriteNames = _customers.SelectMany(c => c.Value.fruits).Select(f => f.name);
 
-            if (!orderFruitSprites.Any())
+            if (!orderFruitSpriteNames.Any())
             {
 
                 return null;
 
             }
 
-            var fruitSprite = orderFruitSprites.Except(availableFruitSprites).ToArray().First();
+            var fruitSpriteName = orderFruitSpriteNames.Except(availableFruitSpriteNames).ToArray().FirstOrDefault();
 
-            return fruitSprite;
+            return fruitSpriteName;
 
         }
 
