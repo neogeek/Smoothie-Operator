@@ -63,7 +63,7 @@ namespace SmoothieOperator
 
         }
 
-        public Sprite FruitNeededByCustomerNotOnAvailable(HashSet<GameObject> availableFruits)
+        public Sprite FruitNeededByCustomerNotOnAvailable(IEnumerable<GameObject> availableFruits)
         {
 
             var availableFruitSprites = availableFruits
