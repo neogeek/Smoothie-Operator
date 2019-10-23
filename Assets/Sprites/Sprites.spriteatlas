@@ -31,14 +31,17 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9704b960517ca4d03a9d7514a67fdefb, type: 3}
-    totalSpriteSurfaceArea: 1204488
+    totalSpriteSurfaceArea: 1288623
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
       Hash: b694a330aa49cd83786b03f7e88c7fe2
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c4cbd240d5b244adc88a10ce2e901367, type: 3}
   - {fileID: 21300000, guid: 8cc38df0f22614b8092bcabd2f4023b4, type: 3}
+  - {fileID: 21300000, guid: 94c0cb2122b454ec9874604b346f93d6, type: 3}
+  - {fileID: 21300000, guid: 8556d0f12eb04489b825effbd9f2e6e1, type: 3}
   - {fileID: 21300000, guid: e27903427a1c54a24b1f526e3ba3f5a5, type: 3}
   - {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e, type: 3}
   - {fileID: 21300000, guid: 3b1824b2568144e9fbdd25cff5d1579e, type: 3}
@@ -49,13 +52,19 @@ SpriteAtlas:
   - {fileID: 21300000, guid: be8a9d45f476a423ba5c18a2f215231b, type: 3}
   - {fileID: 21300000, guid: f6b27fa5b5416404782d390561933a93, type: 3}
   - {fileID: 21300000, guid: c00ffd662ee03443d84581e627430689, type: 3}
+  - {fileID: 21300000, guid: 484986f627f2e4827b52072e63bd9af8, type: 3}
   - {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
+  - {fileID: 21300000, guid: 842427889001844799b71a7c78ab6a81, type: 3}
+  - {fileID: 21300000, guid: 56880469ed5924178bca88213ccb1275, type: 3}
   - {fileID: 21300000, guid: 173694993fa3d4af9872f29fb6b373da, type: 3}
   - {fileID: 21300000, guid: 0cae08b92e7434f1fbd1d6a4ed742880, type: 3}
+  - {fileID: 21300000, guid: 568933bafcf2e4aeab8fc7ac5e4c751a, type: 3}
+  - {fileID: 21300000, guid: 432970fb215c740babeab056bd4653c0, type: 3}
   - {fileID: 21300000, guid: f68d933cf810544a59743150c867b5ca, type: 3}
   - {fileID: 21300000, guid: 1076d63c1d52246548809e8fef9caa20, type: 3}
   - {fileID: 21300000, guid: 2b52348c00d1f498c82a09499fa1f410, type: 3}
   - {fileID: 21300000, guid: 564ef99c7d2904522ac4570567adc76c, type: 3}
+  - {fileID: 21300000, guid: f849c0dc63eea4c22b738a915986c1b3, type: 3}
   - {fileID: 21300000, guid: dead7d2df1cec4431a18446a52b66321, type: 3}
   - {fileID: 21300000, guid: e357628d504344f83aa2364addb2ad0f, type: 3}
   - {fileID: 21300000, guid: 4e318a7ec92de42ca8eeff45b9530db8, type: 3}
@@ -63,8 +72,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: cb199f3f8a875424a8795051bdc1cf9b, type: 3}
   - {fileID: 21300000, guid: 898c687f4545941e686cc6ac8cd2f482, type: 3}
   - {fileID: 21300000, guid: 6171429f0b73940b68cac8f7a55b780c, type: 3}
+  - {fileID: 21300000, guid: a98b18ef9ca4a46a998243c12fe05030, type: 3}
   m_PackedSpriteNamesToIndex:
+  - fruit_2_blended
   - person_1_face_1
+  - fruit_3_splat
+  - fruit_4_splat
   - life-lost
   - fruit_5
   - person_3_face_2
@@ -75,13 +88,19 @@ SpriteAtlas:
   - life-available
   - fruit_2
   - truck_clouds
+  - fruit_4_blended
   - fruit_1
+  - fruit_5_blended
+  - fruit_3_blended
   - fruit_3
   - person_1_arms_wait
+  - fruit_2_splat
+  - fruit_1_splat
   - fruit_4
   - person_2_arms_victory
   - truck_interior
   - person_2_face_2
+  - fruit_1_blended
   - fruit_shadow
   - person_2_arms_wait
   - fruit_highlight
@@ -89,5 +108,6 @@ SpriteAtlas:
   - blender_highlight
   - order_bubble
   - person_2_face_1
+  - fruit_5_splat
   m_Tag: Sprites
   m_IsVariant: 0
