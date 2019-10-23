@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4778033fe74d8e913f4b5c96f86fbf, type: 3}
+  m_Name: FruitSprites
+  m_EditorClassIdentifier: 
+  _fruitSprites:
+  - fruit: {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
+    blended: {fileID: 21300000, guid: f849c0dc63eea4c22b738a915986c1b3, type: 3}
+    splat: {fileID: 21300000, guid: 432970fb215c740babeab056bd4653c0, type: 3}
+  - fruit: {fileID: 21300000, guid: f6b27fa5b5416404782d390561933a93, type: 3}
+    blended: {fileID: 21300000, guid: c4cbd240d5b244adc88a10ce2e901367, type: 3}
+    splat: {fileID: 21300000, guid: 568933bafcf2e4aeab8fc7ac5e4c751a, type: 3}
+  - fruit: {fileID: 21300000, guid: 173694993fa3d4af9872f29fb6b373da, type: 3}
+    blended: {fileID: 21300000, guid: 56880469ed5924178bca88213ccb1275, type: 3}
+    splat: {fileID: 21300000, guid: 94c0cb2122b454ec9874604b346f93d6, type: 3}
+  - fruit: {fileID: 21300000, guid: f68d933cf810544a59743150c867b5ca, type: 3}
+    blended: {fileID: 21300000, guid: 484986f627f2e4827b52072e63bd9af8, type: 3}
+    splat: {fileID: 21300000, guid: 8556d0f12eb04489b825effbd9f2e6e1, type: 3}
+  - fruit: {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e, type: 3}
+    blended: {fileID: 21300000, guid: 842427889001844799b71a7c78ab6a81, type: 3}
+    splat: {fileID: 21300000, guid: a98b18ef9ca4a46a998243c12fe05030, type: 3}
