@@ -32,14 +32,66 @@ namespace SmoothieOperator
             if (_spriteRenderer && _spriteRenderer.sprite)
             {
 
-                _spriteRenderer.sprite = _spriteAtlas.GetSprite(_spriteRenderer.sprite.name) ?? _spriteRenderer.sprite;
+                SetSpriteRenderer(_spriteRenderer.sprite);
 
             }
 
             if (_image && _image.sprite)
             {
 
-                _image.sprite = _spriteAtlas.GetSprite(_image.sprite.name) ?? _image.sprite;
+                SetImage(_image.sprite);
+
+            }
+
+        }
+
+        public void SetSpriteRenderer(Sprite sprite)
+        {
+
+            SetSpriteRenderer(sprite.name);
+
+        }
+
+        public void SetSpriteRenderer(string spriteName)
+        {
+
+            if (!_spriteRenderer)
+            {
+                return;
+            }
+
+            var sprite = _spriteAtlas.GetSprite(spriteName);
+
+            if (sprite)
+            {
+
+                _spriteRenderer.sprite = sprite;
+
+            }
+
+        }
+
+        public void SetImage(Sprite sprite)
+        {
+
+            SetImage(sprite.name);
+
+        }
+
+        public void SetImage(string spriteName)
+        {
+
+            if (!_image)
+            {
+                return;
+            }
+
+            var sprite = _spriteAtlas.GetSprite(spriteName);
+
+            if (sprite)
+            {
+
+                _image.sprite = sprite;
 
             }
 

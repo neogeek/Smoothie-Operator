@@ -32,9 +32,7 @@ namespace SmoothieOperator
                     continue;
                 }
 
-                _liveImages[i].gameObject.SetActive(false);
-                _liveImages[i].sprite = _spriteLifeLost;
-                _liveImages[i].gameObject.SetActive(true);
+                _liveImages[i].GetComponent<SpriteAtlasHelper>().SetImage(_spriteLifeLost);
 
             }
 
@@ -46,9 +44,7 @@ namespace SmoothieOperator
                     continue;
                 }
 
-                _liveImages[i].gameObject.SetActive(false);
-                _liveImages[i].sprite = _spriteLifeAvailable;
-                _liveImages[i].gameObject.SetActive(true);
+                _liveImages[i].GetComponent<SpriteAtlasHelper>().SetImage(_spriteLifeAvailable);
 
             }
 
