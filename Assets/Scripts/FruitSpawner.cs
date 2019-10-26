@@ -8,6 +8,8 @@ namespace SmoothieOperator
     public class FruitSpawner : MonoBehaviour
     {
 
+        private const int MAX_FRUITS_AVAILABLE_AT_A_TIME = 10;
+
 #pragma warning disable CS0649
         [SerializeField]
         private Transform[] _spawnTransforms;
@@ -40,28 +42,39 @@ namespace SmoothieOperator
             while (true)
             {
 
-                var spawnTransform = _spawnTransforms[Random.Range(0, _spawnTransforms.Length)];
-
-                var fruitToSpawn = _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)];
-
-                var fruitSpriteNeeded = _orderManager.FruitNeededByCustomerNotCurrentlyAvailable(_spawnedFruits);
-
-                if (fruitSpriteNeeded != null)
+                if (_spawnedFruits.Count < MAX_FRUITS_AVAILABLE_AT_A_TIME)
                 {
 
-                    fruitToSpawn = fruitSpriteNeeded;
+                    var spawnTransform = _spawnTransforms[Random.Range(0, _spawnTransforms.Length)];
+
+                    var fruitToSpawn = _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)];
+
+                    var fruitSpriteNeeded = _orderManager.FruitNeededByCustomerNotCurrentlyAvailable(_spawnedFruits);
+
+                    if (fruitSpriteNeeded != null)
+                    {
+
+                        fruitToSpawn = fruitSpriteNeeded;
+
+                    }
+
+                    var spawnedFruit = Instantiate(fruitToSpawn,
+                        spawnTransform.position,
+                        Quaternion.identity);
+
+                    spawnedFruit.GetComponent<Rigidbody2D>().velocity = spawnTransform.right;
+
+                    _spawnedFruits.Add(spawnedFruit);
+
+                    yield return new WaitForSeconds(Random.Range(0.5f, 1));
 
                 }
+                else
+                {
 
-                var spawnedFruit = Instantiate(fruitToSpawn,
-                    spawnTransform.position,
-                    Quaternion.identity);
+                    yield return null;
 
-                spawnedFruit.GetComponent<Rigidbody2D>().velocity = spawnTransform.right;
-
-                _spawnedFruits.Add(spawnedFruit);
-
-                yield return new WaitForSeconds(Random.Range(0.5f, 1));
+                }
 
             }
 
