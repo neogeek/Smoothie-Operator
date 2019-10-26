@@ -87,6 +87,15 @@ namespace SmoothieOperator
 
         }
 
+        public void DestroyFruit(GameObject fruit)
+        {
+
+            _spawnedFruits.Remove(fruit);
+
+            Destroy(fruit);
+
+        }
+
     }
 
 }
