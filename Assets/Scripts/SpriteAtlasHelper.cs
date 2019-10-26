@@ -55,7 +55,7 @@ namespace SmoothieOperator
         public void SetSpriteRenderer(string spriteName)
         {
 
-            if (!_spriteRenderer)
+            if (!_spriteRenderer || !_spriteAtlas)
             {
                 return;
             }
@@ -81,7 +81,7 @@ namespace SmoothieOperator
         public void SetImage(string spriteName)
         {
 
-            if (!_image)
+            if (!_image || !_spriteAtlas)
             {
                 return;
             }
