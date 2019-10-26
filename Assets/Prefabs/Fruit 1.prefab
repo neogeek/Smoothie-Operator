@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 138724432132760692}
   - component: {fileID: 138724432132760693}
   - component: {fileID: 5679037512647264468}
+  - component: {fileID: -7125706201969300392}
   m_Layer: 9
   m_Name: Fruit 1
   m_TagString: Untagged
@@ -113,9 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a942e54cefc480d8c4f52f75ca62c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _truckLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
   _shadowTransform: {fileID: 7767083558261697779}
 --- !u!58 &138724432132760692
 CircleCollider2D:
@@ -165,6 +163,18 @@ SortingGroup:
   m_SortingLayerID: -1416069705
   m_SortingLayer: 3
   m_SortingOrder: 0
+--- !u!114 &-7125706201969300392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138724432132760694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29df5be2fb834ced96b2b1f2494adce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &744136250698750458
 GameObject:
   m_ObjectHideFlags: 0
