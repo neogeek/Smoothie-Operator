@@ -4,6 +4,7 @@ using UnityEngine;
 namespace SmoothieOperator
 {
 
+    [SelectionBase]
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
     {
