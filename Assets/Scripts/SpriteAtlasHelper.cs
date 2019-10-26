@@ -62,7 +62,7 @@ namespace SmoothieOperator
 
             var sprite = _spriteAtlas.GetSprite(spriteName);
 
-            if (sprite)
+            if (sprite && !Equals(_spriteRenderer.sprite, sprite))
             {
 
                 _spriteRenderer.sprite = sprite;
@@ -100,7 +100,7 @@ namespace SmoothieOperator
 
             var sprite = _spriteAtlas.GetSprite(spriteName);
 
-            if (sprite)
+            if (sprite && !Equals(_image.sprite, sprite))
             {
 
                 _image.sprite = sprite;
