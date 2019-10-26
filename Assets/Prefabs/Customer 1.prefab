@@ -325,12 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1636f1761d6ba4b159d89c11525b12a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitSprites:
-  - {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
-  - {fileID: 21300000, guid: f6b27fa5b5416404782d390561933a93, type: 3}
-  - {fileID: 21300000, guid: 173694993fa3d4af9872f29fb6b373da, type: 3}
-  - {fileID: 21300000, guid: f68d933cf810544a59743150c867b5ca, type: 3}
-  - {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e, type: 3}
   _fruitSpriteRenderers:
   - {fileID: 9135662947853287774}
   - {fileID: 6160720020971803754}
