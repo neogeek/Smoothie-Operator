@@ -27,10 +27,8 @@ namespace SmoothieOperator
 
         private int _timer = SECOND_BEFORE_CUSTOMER_LEAVES;
 
-        private IEnumerator Start()
+        private void Start()
         {
-
-            _timerTextComp.enabled = false;
 
             for (var i = 0; i < _fruitSpriteRenderers.Length; i += 1)
             {
@@ -39,7 +37,16 @@ namespace SmoothieOperator
 
             }
 
-            while (true)
+            StartCoroutine(CustomerTimer());
+
+        }
+
+        private IEnumerator CustomerTimer()
+        {
+
+            _timerTextComp.enabled = false;
+
+            while (_timer > 0)
             {
 
                 yield return _delayTimer;
