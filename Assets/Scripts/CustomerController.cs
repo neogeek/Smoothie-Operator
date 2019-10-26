@@ -35,10 +35,8 @@ namespace SmoothieOperator
 
         private int _timer = 60;
 
-        private IEnumerator Start()
+        private void Awake()
         {
-
-            _timerTextComp.enabled = false;
 
             _order = new Order
             {
@@ -49,6 +47,13 @@ namespace SmoothieOperator
                     _fruitSprites[Random.Range(0, _fruitSprites.Length)]
                 }
             };
+
+        }
+
+        private IEnumerator Start()
+        {
+
+            _timerTextComp.enabled = false;
 
             for (var i = 0; i < _fruitSpriteRenderers.Length; i += 1)
             {
