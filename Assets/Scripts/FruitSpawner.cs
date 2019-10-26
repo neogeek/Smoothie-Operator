@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace SmoothieOperator
 {
@@ -46,13 +44,12 @@ namespace SmoothieOperator
 
                 var fruitToSpawn = _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)];
 
-                var fruitSpriteNeeded = _orderManager.FruitNeededByCustomerNotOnAvailable(_spawnedFruits);
+                var fruitSpriteNeeded = _orderManager.FruitNeededByCustomerNotCurrentlyAvailable(_spawnedFruits);
 
                 if (fruitSpriteNeeded != null)
                 {
 
-                    fruitToSpawn = _fruitPrefabs.First(f =>
-                        f.GetComponent<SpriteRenderer>().sprite.name.StartsWith(fruitSpriteNeeded));
+                    fruitToSpawn = fruitSpriteNeeded;
 
                 }
 

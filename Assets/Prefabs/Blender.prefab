@@ -478,9 +478,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd949b9d4f4e452a80122d195d9bd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _truckLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
+  _fruitSpawner: {fileID: 0}
+  _boxCollider2D: {fileID: 8913628530574994994}
+  _blendedSpriteAtlasHelpers:
+  - {fileID: 8408982624096394794}
+  - {fileID: 1655090543308807417}
+  - {fileID: 6988744843052549011}
+  _splatPrefab: {fileID: 1061150076993840436, guid: b87d919221e834fbaa544d357125b72f,
+    type: 3}
+  _truckTransform: {fileID: 0}
 --- !u!114 &7318723066178690473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,9 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a942e54cefc480d8c4f52f75ca62c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _truckLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
   _shadowTransform: {fileID: 5684543250174174237}
 --- !u!1 &7877200109392038015
 GameObject:

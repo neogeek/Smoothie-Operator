@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1070372666488614515}
   - component: {fileID: 647763095598069276}
   m_Layer: 0
-  m_Name: OrderManager
+  m_Name: Order Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,6 +54,12 @@ MonoBehaviour:
   - {fileID: 3067453415397891745, guid: becc0e949c03f4c4fb9214cfd5b7dce8, type: 3}
   - {fileID: 7730209961555359028, guid: 40c9d0870bb59428a8468c2ac7a8e03c, type: 3}
   - {fileID: 7256037764757809023, guid: b5871fc179a354467bd6baf2a1a054b4, type: 3}
+  _fruitPrefabs:
+  - {fileID: 138724432132760694, guid: 6c679fd238c9346bb99c528bf617db21, type: 3}
+  - {fileID: 3738418294859847059, guid: 6d4402eae11484111af613d2b7b36e0c, type: 3}
+  - {fileID: 3738418294859847059, guid: 754fc00ee13864aff9f05d5e6a4381ef, type: 3}
+  - {fileID: 3738418294859847059, guid: 8b8cad78ccaa24069be666300aba70bc, type: 3}
+  - {fileID: 3738418294859847059, guid: c0204620736e048fab61dcf739d1fae0, type: 3}
 --- !u!1 &2730389419867585628
 GameObject:
   m_ObjectHideFlags: 0

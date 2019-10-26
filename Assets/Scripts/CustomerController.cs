@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 namespace SmoothieOperator
 {
@@ -13,19 +9,13 @@ namespace SmoothieOperator
     public class CustomerController : MonoBehaviour
     {
 
-        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
-
         private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
 
-        public IEnumerable<Sprite> fruits => _order.fruits.Length > 0 ? Array.AsReadOnly(_order.fruits) : null;
+        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
+
+        public Order order;
 
 #pragma warning disable CS0649
-        [SerializeField]
-        private Order _order;
-
-        [SerializeField]
-        private Sprite[] _fruitSprites;
-
         [SerializeField]
         private SpriteRenderer[] _fruitSpriteRenderers;
 
@@ -35,21 +25,6 @@ namespace SmoothieOperator
 
         private int _timer = 60;
 
-        private void Awake()
-        {
-
-            _order = new Order
-            {
-                fruits = new[]
-                {
-                    _fruitSprites[Random.Range(0, _fruitSprites.Length)],
-                    _fruitSprites[Random.Range(0, _fruitSprites.Length)],
-                    _fruitSprites[Random.Range(0, _fruitSprites.Length)]
-                }
-            };
-
-        }
-
         private IEnumerator Start()
         {
 
@@ -58,7 +33,7 @@ namespace SmoothieOperator
             for (var i = 0; i < _fruitSpriteRenderers.Length; i += 1)
             {
 
-                _fruitSpriteRenderers[i].sprite = _order.fruits[i];
+                _fruitSpriteRenderers[i].sprite = order.fruits[i].fruit;
 
             }
 
@@ -79,13 +54,6 @@ namespace SmoothieOperator
                 _timerTextComp.text = _timer.ToString();
 
             }
-
-        }
-
-        public bool CanFruitsFulfillOrder(IEnumerable<Sprite> fruitsInBlender)
-        {
-
-            return _order.fruits.Except(fruitsInBlender).ToArray().Length.Equals(0);
 
         }
 

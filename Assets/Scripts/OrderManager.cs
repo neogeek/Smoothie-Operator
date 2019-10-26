@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace SmoothieOperator
 {
@@ -18,6 +17,9 @@ namespace SmoothieOperator
 
         [SerializeField]
         private GameObject[] _customerPrefabs;
+
+        [SerializeField]
+        private GameObject[] _fruitPrefabs;
 #pragma warning restore CS0649
 
         private readonly Dictionary<Transform, CustomerController> _customers =
@@ -60,28 +62,45 @@ namespace SmoothieOperator
 
             var customerController = spawnedCustomer.GetComponent<CustomerController>();
 
+            customerController.order = new Order
+            {
+                fruits = new[]
+                {
+                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit,
+                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit,
+                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit
+                }
+            };
+
             _customers.Add(spawnTransform, customerController);
 
         }
 
-        public string FruitNeededByCustomerNotOnAvailable(IEnumerable<GameObject> availableFruits)
+        public GameObject FruitNeededByCustomerNotCurrentlyAvailable(IEnumerable<GameObject> availableFruitGameObjects)
         {
 
-            var availableFruitSpriteNames = availableFruits
-                .Select(f => f.GetComponent<SpriteRenderer>().sprite.GetNiceName());
+            var availableFruits = availableFruitGameObjects.Select(f => f.GetComponent<FruitController>().fruit);
 
-            var orderFruitSpriteNames = _customers.SelectMany(c => c.Value.fruits).Select(f => f.name).ToArray();
+            var orderFruits = _customers.SelectMany(c => c.Value.order.fruits).ToArray();
 
-            if (!orderFruitSpriteNames.Any())
+            if (!orderFruits.Any())
             {
 
                 return null;
 
             }
 
-            var fruitSpriteName = orderFruitSpriteNames.Except(availableFruitSpriteNames).ToArray().FirstOrDefault();
+            var fruitNeededByCustomer = orderFruits.Except(availableFruits).ToArray();
 
-            return fruitSpriteName;
+            if (!fruitNeededByCustomer.Any())
+            {
+
+                return null;
+
+            }
+
+            return _fruitPrefabs.First(f =>
+                f.GetComponent<FruitController>().fruit.Equals(fruitNeededByCustomer.First()));
 
         }
 
