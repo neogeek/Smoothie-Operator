@@ -21,6 +21,8 @@ namespace SmoothieOperator
 
         private Vector3 _bounceBoxCastSize;
 
+        private Coroutine _bounceCoroutine;
+
         private void Awake()
         {
 
@@ -49,7 +51,34 @@ namespace SmoothieOperator
 
                 }
 
+                if (_bounceCoroutine != null)
+                {
+
+                    StopCoroutine(_bounceCoroutine);
+
+                }
+
+                _bounceCoroutine = StartCoroutine(AnimateTruck());
+
                 yield return new WaitForSeconds(Random.Range(1, 5));
+
+            }
+
+        }
+
+        private IEnumerator AnimateTruck()
+        {
+
+            var timer = 0f;
+
+            while (timer < _bounceAnimation.keys[_bounceAnimation.keys.Length - 1].time)
+            {
+
+                timer += Time.deltaTime;
+
+                gameObject.transform.position = new Vector3(0, _bounceAnimation.Evaluate(timer), 0);
+
+                yield return null;
 
             }
 

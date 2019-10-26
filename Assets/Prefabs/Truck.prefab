@@ -49,7 +49,34 @@ MonoBehaviour:
   _floorCollider: {fileID: 7415076775937573568}
   _bounceAnimation:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.050391894
+      value: 0.4988991
+      inSlope: 5.480616
+      outSlope: 5.480616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.053156547
+      outWeight: 0.21195213
+    - serializedVersion: 3
+      time: 0.2
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
