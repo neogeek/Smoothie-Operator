@@ -1,6 +1,6 @@
 # Smoothie Operator
 
-> 🍊 One robot blender. One flying food truck. Endless customers.
+> 🍊🍓🍌 One robot blender. One flying food truck. Endless customers.
 
 ## Intro
 
