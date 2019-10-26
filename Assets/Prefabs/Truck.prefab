@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7851486257165881457}
+  - component: {fileID: 5931525851351099463}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Untagged
@@ -33,6 +34,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5931525851351099463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908120599141770725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4e7d2a6b11f485c85b32dce1a5560f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floorCollider: {fileID: 7415076775937573568}
+  _bounceAnimation:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7415076774635228523
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +224,6 @@ GameObject:
   - component: {fileID: 7415076775937573569}
   - component: {fileID: 7415076775937573570}
   - component: {fileID: 7415076775937573571}
-  - component: {fileID: 7415076775937573583}
   - component: {fileID: 7415076775937573568}
   - component: {fileID: 7415076775937573580}
   - component: {fileID: 7415076775937573581}
@@ -293,18 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteAtlas: {fileID: 4343727234628468602, guid: fd5bd4619681b4973aad194c87fd4ec5,
     type: 2}
---- !u!114 &7415076775937573583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7415076775937573572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4e7d2a6b11f485c85b32dce1a5560f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &7415076775937573568
 BoxCollider2D:
   m_ObjectHideFlags: 0
