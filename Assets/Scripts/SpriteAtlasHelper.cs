@@ -99,4 +99,16 @@ namespace SmoothieOperator
 
     }
 
+    public static class SpriteCustomExtensions
+    {
+
+        public static string GetNiceName(this Sprite sprite)
+        {
+
+            return sprite.name.Replace("(Clone)", "");
+
+        }
+
+    }
+
 }
