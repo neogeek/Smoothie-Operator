@@ -16,9 +16,6 @@ namespace SmoothieOperator
 
 #pragma warning disable CS0649
         [SerializeField]
-        private FruitSpawner _fruitSpawner;
-
-        [SerializeField]
         private BoxCollider2D _boxCollider2D;
 
         [SerializeField]
@@ -33,6 +30,8 @@ namespace SmoothieOperator
 
         private Rigidbody2D _rigidbody2D;
 
+        private FruitSpawner _fruitSpawner;
+
         private bool isGrounded;
 
         private float _horizontalMovement;
@@ -43,6 +42,15 @@ namespace SmoothieOperator
         {
 
             _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+            _fruitSpawner = FindObjectOfType<FruitSpawner>();
+
+            if (_fruitSpawner == null)
+            {
+
+                Debug.LogError("Fruit Spawner not found!");
+
+            }
 
         }
 
