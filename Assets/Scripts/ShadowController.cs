@@ -6,8 +6,6 @@ namespace SmoothieOperator
     public class ShadowController : MonoBehaviour
     {
 
-        private static LayerMask _truckLayerMask => LayerMask.GetMask("Truck");
-
 #pragma warning disable CS0649
         [SerializeField]
         private Transform _shadowTransform;
@@ -16,7 +14,7 @@ namespace SmoothieOperator
         private void Update()
         {
 
-            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
+            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, TruckController.layerMask);
 
             if (!hit)
             {
@@ -35,7 +33,7 @@ namespace SmoothieOperator
 
             Gizmos.color = Color.green;
 
-            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
+            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, TruckController.layerMask);
 
             Gizmos.DrawLine(gameObject.transform.position, hit.point);
 
