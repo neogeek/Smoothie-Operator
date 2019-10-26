@@ -6,10 +6,9 @@ namespace SmoothieOperator
     public class ShadowController : MonoBehaviour
     {
 
-#pragma warning disable CS0649
-        [SerializeField]
-        private LayerMask _truckLayerMask;
+        private static LayerMask _truckLayerMask => LayerMask.GetMask("Truck");
 
+#pragma warning disable CS0649
         [SerializeField]
         private Transform _shadowTransform;
 #pragma warning restore CS0649
