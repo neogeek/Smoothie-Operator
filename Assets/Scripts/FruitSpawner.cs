@@ -57,9 +57,7 @@ namespace SmoothieOperator
                     spawnTransform.position,
                     Quaternion.identity);
 
-                var rigidbody2D = spawnedFruit.GetComponent<Rigidbody2D>();
-
-                rigidbody2D.velocity = spawnTransform.right;
+                spawnedFruit.GetComponent<Rigidbody2D>().velocity = spawnTransform.right;
 
                 _spawnedFruits.Add(spawnedFruit);
 
