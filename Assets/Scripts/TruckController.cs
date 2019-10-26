@@ -23,7 +23,7 @@ namespace SmoothieOperator
 
         private Vector3 _bounceBoxCastSize;
 
-        private readonly RaycastHit2D[] groundedFruits = new RaycastHit2D[1000];
+        private readonly RaycastHit2D[] _groundedFruits = new RaycastHit2D[1000];
 
         private void Awake()
         {
@@ -43,12 +43,12 @@ namespace SmoothieOperator
             {
 
                 var hits = Physics2D.BoxCastNonAlloc(_bounceBoxCastPosition, _bounceBoxCastSize, 0, Vector2.zero,
-                    groundedFruits, 0, _fruitLayerMask);
+                    _groundedFruits, 0, _fruitLayerMask);
 
                 for (var i = 0; i < hits; i += 1)
                 {
 
-                    groundedFruits[i].collider.gameObject.GetComponent<Rigidbody2D>()
+                    _groundedFruits[i].collider.gameObject.GetComponent<Rigidbody2D>()
                         .AddForce(Vector2.up * BOUNCE_FORCE, ForceMode2D.Impulse);
 
                 }
