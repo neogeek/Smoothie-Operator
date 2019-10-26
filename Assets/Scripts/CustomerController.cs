@@ -11,6 +11,8 @@ namespace SmoothieOperator
 
         private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
 
+        private const int SECOND_BEFORE_CUSTOMER_LEAVES = 60;
+
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
 
         public Order order;
@@ -23,7 +25,7 @@ namespace SmoothieOperator
         private Text _timerTextComp;
 #pragma warning restore CS0649
 
-        private int _timer = 60;
+        private int _timer = SECOND_BEFORE_CUSTOMER_LEAVES;
 
         private IEnumerator Start()
         {
