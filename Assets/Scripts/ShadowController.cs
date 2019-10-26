@@ -19,15 +19,15 @@ namespace SmoothieOperator
 
             var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, _truckLayerMask);
 
-            if (hit)
+            if (!hit)
             {
-
-                _shadowTransform.position = hit.point;
-
-                _shadowTransform.localScale =
-                    Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
-
+                return;
             }
+
+            _shadowTransform.position = hit.point;
+
+            _shadowTransform.localScale =
+                Vector3.Lerp(Vector3.one, Vector3.zero, Mathf.InverseLerp(0, 5, hit.distance));
 
         }
 

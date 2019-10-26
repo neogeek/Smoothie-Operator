@@ -70,7 +70,7 @@ namespace SmoothieOperator
             var availableFruitSpriteNames = availableFruits
                 .Select(f => f.GetComponent<SpriteRenderer>().sprite.name.Replace("(Clone)", ""));
 
-            var orderFruitSpriteNames = _customers.SelectMany(c => c.Value.fruits).Select(f => f.name);
+            var orderFruitSpriteNames = _customers.SelectMany(c => c.Value.fruits).Select(f => f.name).ToArray();
 
             if (!orderFruitSpriteNames.Any())
             {
