@@ -9,8 +9,6 @@ namespace SmoothieOperator
 
         private const float BOUNCE_FORCE = 5;
 
-        private static LayerMask _fruitLayerMask => LayerMask.GetMask("Fruit");
-
 #pragma warning disable CS0649
         [SerializeField]
         private BoxCollider2D _floorCollider;
@@ -43,7 +41,7 @@ namespace SmoothieOperator
             {
 
                 var hits = Physics2D.BoxCastNonAlloc(_bounceBoxCastPosition, _bounceBoxCastSize, 0, Vector2.zero,
-                    _groundedFruits, 0, _fruitLayerMask);
+                    _groundedFruits, 0, FruitController.layerMask);
 
                 for (var i = 0; i < hits; i += 1)
                 {
