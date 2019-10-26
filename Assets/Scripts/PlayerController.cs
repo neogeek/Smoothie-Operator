@@ -36,6 +36,12 @@ namespace SmoothieOperator
 
         [SerializeField]
         private Sprite _spriteBlenderHighlight;
+
+        [SerializeField]
+        private AudioSource[] _blendSoundAudioSources;
+
+        [SerializeField]
+        private AudioSource[] _flushSoundAudioSources;
 #pragma warning restore CS0649
 
         private Rigidbody2D _rigidbody2D;
@@ -147,6 +153,8 @@ namespace SmoothieOperator
 
             _fruitSpawner.DestroyFruit(_collectibleFruit.collider.gameObject);
 
+            _blendSoundAudioSources[Random.Range(0, _blendSoundAudioSources.Length - 1)].Play();
+
         }
 
         private void Flush()
@@ -172,6 +180,8 @@ namespace SmoothieOperator
             }
 
             _collectedFruits.Clear();
+
+            _flushSoundAudioSources[Random.Range(0, _flushSoundAudioSources.Length - 1)].Play();
 
         }
 

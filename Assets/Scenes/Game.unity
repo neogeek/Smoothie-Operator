@@ -457,18 +457,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8e258591fd24602ad0ec7ecd811078, type: 3}
---- !u!114 &552787884 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4245638978282034939, guid: 73f06b87fa3604736b0a83bda5c03154,
-    type: 3}
-  m_PrefabInstance: {fileID: 5908357013471241598}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8293d6a9a83fc4e2090e42f10fdff3b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1210056263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,11 +1256,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4738477313434072960, guid: ffc5f2a9228724f69b800dc3de0b9356,
-        type: 3}
-      propertyPath: _fruitSpawner
-      value: 
-      objectReference: {fileID: 552787884}
     - target: {fileID: 4738477313434072960, guid: ffc5f2a9228724f69b800dc3de0b9356,
         type: 3}
       propertyPath: _truckTransform
