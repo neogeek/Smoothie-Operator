@@ -9,6 +9,7 @@ namespace SmoothieOperator
 
         public const int STARTING_LIVES = 3;
 
+        [RangeAttribute(0, STARTING_LIVES)]
         public int lives = STARTING_LIVES;
 
         public int score;
