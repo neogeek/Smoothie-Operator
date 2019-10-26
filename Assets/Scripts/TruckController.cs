@@ -11,15 +11,19 @@ namespace SmoothieOperator
 
         private static LayerMask _fruitLayerMask => LayerMask.GetMask("Fruit");
 
+#pragma warning disable CS0649
         [SerializeField]
         private BoxCollider2D _floorCollider;
 
         [SerializeField]
         private AnimationCurve _bounceAnimation;
+#pragma warning restore CS0649
 
         private Vector3 _bounceBoxCastPosition;
 
         private Vector3 _bounceBoxCastSize;
+
+        private readonly RaycastHit2D[] groundedFruits = new RaycastHit2D[1000];
 
         private void Awake()
         {
@@ -38,13 +42,13 @@ namespace SmoothieOperator
             while (true)
             {
 
-                var closeFruits = Physics2D.BoxCastAll(_bounceBoxCastPosition, _bounceBoxCastSize, 0, Vector2.zero, 0,
-                    _fruitLayerMask);
+                var hits = Physics2D.BoxCastNonAlloc(_bounceBoxCastPosition, _bounceBoxCastSize, 0, Vector2.zero,
+                    groundedFruits, 0, _fruitLayerMask);
 
-                foreach (var fruit in closeFruits)
+                for (var i = 0; i < hits; i += 1)
                 {
 
-                    fruit.collider.gameObject.GetComponent<Rigidbody2D>()
+                    groundedFruits[i].collider.gameObject.GetComponent<Rigidbody2D>()
                         .AddForce(Vector2.up * BOUNCE_FORCE, ForceMode2D.Impulse);
 
                 }
