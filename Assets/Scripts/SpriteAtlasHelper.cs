@@ -71,6 +71,18 @@ namespace SmoothieOperator
 
         }
 
+        public void ClearSpriteRenderer()
+        {
+
+            if (!_spriteRenderer)
+            {
+                return;
+            }
+
+            _spriteRenderer.sprite = null;
+
+        }
+
         public void SetImage(Sprite sprite)
         {
 
@@ -94,6 +106,18 @@ namespace SmoothieOperator
                 _image.sprite = sprite;
 
             }
+
+        }
+
+        public void ClearImage()
+        {
+
+            if (!_image)
+            {
+                return;
+            }
+
+            _image.sprite = null;
 
         }
 
