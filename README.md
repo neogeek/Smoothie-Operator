@@ -14,8 +14,8 @@ In the not-so distant future where food trucks are in such high demand that they
 
 Built for the Purple Monkey Game Jam in March 2015
 
-- Designer - Rich Leonardo of Forge Ahead Studios
-- Audio SFX/Music - Oliver Getz
-- Developer - Michael Leonardo of Forge Ahead Studios
-- Developer - Scott Doxey
+- Designer - [Rich Leonardo](https://twitter.com/Damperzero) of [Forge Ahead Studios](https://twitter.com/ForgeAheadNow)
+- Audio SFX/Music - [Oliver Getz](https://twitter.com/sjatrik)
+- Developer - [Michael Leonardo](https://twitter.com/neztec) of [Forge Ahead Studios](https://twitter.com/ForgeAheadNow)
+- Developer - [Scott Doxey](https://twitter.com/neogeek)
 - Developer - Travis Beebe
