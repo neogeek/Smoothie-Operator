@@ -9,24 +9,12 @@ namespace SmoothieOperator
     public class FruitSpritesReference : ScriptableObject
     {
 
-        [Serializable]
-        public struct FruitSprite
+        public Fruit[] _fruits;
+
+        public Fruit GetFruitSpriteFromFruitName(string fruitName)
         {
 
-            public Sprite fruit;
-
-            public Sprite blended;
-
-            public Sprite splat;
-
-        }
-
-        public FruitSprite[] _fruitSprites;
-
-        public FruitSprite GetFruitSpriteFromFruitName(string fruitName)
-        {
-
-            return _fruitSprites.First(f => f.fruit.name.Equals(fruitName));
+            return _fruits.First(f => f.fruit.name.Equals(fruitName));
 
         }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4778033fe74d8e913f4b5c96f86fbf, type: 3}
   m_Name: FruitSprites
   m_EditorClassIdentifier: 
-  _fruitSprites:
+  _fruits:
   - fruit: {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
     blended: {fileID: 21300000, guid: f849c0dc63eea4c22b738a915986c1b3, type: 3}
     splat: {fileID: 21300000, guid: 432970fb215c740babeab056bd4653c0, type: 3}
