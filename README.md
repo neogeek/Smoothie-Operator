@@ -12,7 +12,7 @@ In the not-so distant future where food trucks are in such high demand that they
 
 ## Credits
 
-Built for the Purple Monkey Game Jam in March 2015
+Built for the [Purple Monkey Game Jam](https://purplemonkeygamejam.com/) in March 2015
 
 - Designer - [Rich Leonardo](https://twitter.com/Damperzero) of [Forge Ahead Studios](https://twitter.com/ForgeAheadNow)
 - Audio SFX/Music - [Oliver Getz](https://twitter.com/sjatrik)
