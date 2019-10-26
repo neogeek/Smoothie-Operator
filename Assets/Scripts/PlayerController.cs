@@ -27,6 +27,15 @@ namespace SmoothieOperator
 
         [SerializeField]
         private Transform _truckTransform;
+
+        [SerializeField]
+        private SpriteAtlasHelper _blenderSpriteAtlasHelper;
+
+        [SerializeField]
+        private Sprite _spriteBlenderDefault;
+
+        [SerializeField]
+        private Sprite _spriteBlenderHighlight;
 #pragma warning restore CS0649
 
         private Rigidbody2D _rigidbody2D;
@@ -36,6 +45,8 @@ namespace SmoothieOperator
         private bool isGrounded;
 
         private float _horizontalMovement;
+
+        private RaycastHit2D _collectibleFruit;
 
         private readonly List<Fruit> _collectedFruits = new List<Fruit>();
 
@@ -68,6 +79,23 @@ namespace SmoothieOperator
             {
 
                 _rigidbody2D.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
+
+            }
+
+            _collectibleFruit = Physics2D.BoxCast(gameObject.transform.position, _boxCollider2D.bounds.size, 0,
+                Vector2.zero,
+                0, FruitController.layerMask);
+
+            if (_collectibleFruit && _collectedFruits.Count < _blendedSpriteAtlasHelpers.Length)
+            {
+
+                _blenderSpriteAtlasHelper.SetSpriteRenderer(_spriteBlenderHighlight);
+
+            }
+            else
+            {
+
+                _blenderSpriteAtlasHelper.SetSpriteRenderer(_spriteBlenderDefault);
 
             }
 
@@ -104,21 +132,20 @@ namespace SmoothieOperator
 
             }
 
-            var hit = Physics2D.BoxCast(gameObject.transform.position, _boxCollider2D.bounds.size, 0, Vector2.zero,
-                0, FruitController.layerMask);
-
-            if (!hit)
+            if (!_collectibleFruit)
             {
+
                 return;
+
             }
 
-            var fruit = hit.collider.gameObject.GetComponent<FruitController>().fruit;
+            var fruit = _collectibleFruit.collider.gameObject.GetComponent<FruitController>().fruit;
 
             _collectedFruits.Add(fruit);
 
             _blendedSpriteAtlasHelpers[_collectedFruits.Count - 1].SetSpriteRenderer(fruit.blended);
 
-            _fruitSpawner.DestroyFruit(hit.collider.gameObject);
+            _fruitSpawner.DestroyFruit(_collectibleFruit.collider.gameObject);
 
         }
 

@@ -478,7 +478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd949b9d4f4e452a80122d195d9bd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitSpawner: {fileID: 0}
   _boxCollider2D: {fileID: 8913628530574994994}
   _blendedSpriteAtlasHelpers:
   - {fileID: 8408982624096394794}
@@ -487,6 +486,11 @@ MonoBehaviour:
   _splatPrefab: {fileID: 1061150076993840436, guid: b87d919221e834fbaa544d357125b72f,
     type: 3}
   _truckTransform: {fileID: 0}
+  _blenderSpriteAtlasHelper: {fileID: 4757395785874097589}
+  _spriteBlenderDefault: {fileID: 21300000, guid: 5b48beee968634c8f8b6f756ce86d00f,
+    type: 3}
+  _spriteBlenderHighlight: {fileID: 21300000, guid: cb199f3f8a875424a8795051bdc1cf9b,
+    type: 3}
 --- !u!114 &7318723066178690473
 MonoBehaviour:
   m_ObjectHideFlags: 0
