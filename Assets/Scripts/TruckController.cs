@@ -21,8 +21,6 @@ namespace SmoothieOperator
 
         private Vector3 _bounceBoxCastSize;
 
-        private Coroutine _bounceCoroutine;
-
         private void Awake()
         {
 
@@ -51,14 +49,7 @@ namespace SmoothieOperator
 
                 }
 
-                if (_bounceCoroutine != null)
-                {
-
-                    StopCoroutine(_bounceCoroutine);
-
-                }
-
-                _bounceCoroutine = StartCoroutine(AnimateTruck());
+                yield return StartCoroutine(AnimateTruck());
 
                 yield return new WaitForSeconds(Random.Range(1, 5));
 
