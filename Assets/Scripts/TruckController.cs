@@ -7,6 +7,8 @@ namespace SmoothieOperator
     public class TruckController : MonoBehaviour
     {
 
+        public static LayerMask layerMask => LayerMask.GetMask("Truck");
+
         private const float BOUNCE_FORCE = 5;
 
 #pragma warning disable CS0649
