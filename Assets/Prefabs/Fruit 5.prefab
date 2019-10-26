@@ -7,10 +7,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7125706201969300392, guid: 6c679fd238c9346bb99c528bf617db21,
+        type: 3}
+      propertyPath: fruit.fruit
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e,
+        type: 3}
+    - target: {fileID: -7125706201969300392, guid: 6c679fd238c9346bb99c528bf617db21,
+        type: 3}
+      propertyPath: fruit.blended
+      value: 
+      objectReference: {fileID: 21300000, guid: 842427889001844799b71a7c78ab6a81,
+        type: 3}
+    - target: {fileID: -7125706201969300392, guid: 6c679fd238c9346bb99c528bf617db21,
+        type: 3}
+      propertyPath: fruit.splat
+      value: 
+      objectReference: {fileID: 21300000, guid: a98b18ef9ca4a46a998243c12fe05030,
+        type: 3}
     - target: {fileID: 138724432132760694, guid: 6c679fd238c9346bb99c528bf617db21,
         type: 3}
       propertyPath: m_Name
-      value: fruit_5
+      value: Fruit 5
       objectReference: {fileID: 0}
     - target: {fileID: 138724432132760689, guid: 6c679fd238c9346bb99c528bf617db21,
         type: 3}

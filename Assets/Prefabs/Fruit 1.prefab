@@ -175,6 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29df5be2fb834ced96b2b1f2494adce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruit:
+    fruit: {fileID: 21300000, guid: 75c90417e4d684779bee1afd746f1b8d, type: 3}
+    blended: {fileID: 21300000, guid: f849c0dc63eea4c22b738a915986c1b3, type: 3}
+    splat: {fileID: 21300000, guid: 432970fb215c740babeab056bd4653c0, type: 3}
 --- !u!1 &744136250698750458
 GameObject:
   m_ObjectHideFlags: 0
