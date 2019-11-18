@@ -13,6 +13,8 @@ namespace SmoothieOperator
 
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
 
+        private readonly WaitForSecondsRealtime _delayExitAnimation = new WaitForSecondsRealtime(2);
+
         public Order order;
 
         public delegate void CustomerEventHandler(CustomerController customerController);
@@ -58,6 +60,15 @@ namespace SmoothieOperator
                 _timerTextComp.text = _timer.ToString();
 
             }
+
+            StartCoroutine(OrderCanceled());
+
+        }
+
+        private IEnumerator OrderCanceled()
+        {
+
+            yield return _delayExitAnimation;
 
             OrderCanceledEvent?.Invoke(this);
 
