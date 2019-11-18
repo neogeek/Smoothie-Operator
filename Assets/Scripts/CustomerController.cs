@@ -21,6 +21,8 @@ namespace SmoothieOperator
 
         public CustomerEventHandler OrderCanceledEvent;
 
+        public CustomerEventHandler OrderFulFilledEvent;
+
 #pragma warning disable CS0649
         [SerializeField]
         private SpriteRenderer[] _fruitSpriteRenderers;
@@ -71,6 +73,17 @@ namespace SmoothieOperator
             yield return _delayExitAnimation;
 
             OrderCanceledEvent?.Invoke(this);
+
+            Destroy(gameObject);
+
+        }
+
+        private IEnumerator OrderFulFilled()
+        {
+
+            yield return _delayExitAnimation;
+
+            OrderFulFilledEvent?.Invoke(this);
 
             Destroy(gameObject);
 
