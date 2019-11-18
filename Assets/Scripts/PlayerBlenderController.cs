@@ -5,15 +5,8 @@ namespace SmoothieOperator
 {
 
     [SelectionBase]
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerBlenderController : MonoBehaviour
     {
-
-        private const float HORIZONTAL_SPEED = 5;
-
-        private const float JUMP_FORCE = 5;
-
-        private const float GROUND_TEST_DISTANCE = 0.1f;
 
 #pragma warning disable CS0649
         [SerializeField]
@@ -44,8 +37,6 @@ namespace SmoothieOperator
         private AudioSource[] _flushSoundAudioSources;
 #pragma warning restore CS0649
 
-        private Rigidbody2D _rigidbody2D;
-
         private FruitSpawner _fruitSpawner;
 
         private bool isGrounded;
@@ -58,8 +49,6 @@ namespace SmoothieOperator
 
         private void Awake()
         {
-
-            _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 
             _fruitSpawner = FindObjectOfType<FruitSpawner>();
 
@@ -74,19 +63,6 @@ namespace SmoothieOperator
 
         private void Update()
         {
-
-            _horizontalMovement = Input.GetAxis("Horizontal");
-
-            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, TruckController.layerMask);
-
-            isGrounded = hit.distance < GROUND_TEST_DISTANCE;
-
-            if (isGrounded && Input.GetButtonUp("Jump"))
-            {
-
-                _rigidbody2D.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
-
-            }
 
             _collectibleFruit = Physics2D.BoxCast(gameObject.transform.position, _boxCollider2D.bounds.size, 0,
                 Vector2.zero,
@@ -118,13 +94,6 @@ namespace SmoothieOperator
                 Flush();
 
             }
-
-        }
-
-        private void FixedUpdate()
-        {
-
-            _rigidbody2D.velocity = new Vector2(_horizontalMovement * HORIZONTAL_SPEED, _rigidbody2D.velocity.y);
 
         }
 
