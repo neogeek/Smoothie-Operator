@@ -72,7 +72,7 @@ namespace SmoothieOperator
                 }
             };
 
-            customerController.OrderCanceled += HandleOrderCanceled;
+            customerController.OrderCanceledEvent += HandleOrderCanceled;
 
             _customers.Add(spawnTransform, customerController);
 

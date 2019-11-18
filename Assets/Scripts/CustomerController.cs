@@ -17,7 +17,7 @@ namespace SmoothieOperator
 
         public delegate void CustomerEventHandler(CustomerController customerController);
 
-        public CustomerEventHandler OrderCanceled;
+        public CustomerEventHandler OrderCanceledEvent;
 
 #pragma warning disable CS0649
         [SerializeField]
@@ -59,7 +59,7 @@ namespace SmoothieOperator
 
             }
 
-            OrderCanceled?.Invoke(this);
+            OrderCanceledEvent?.Invoke(this);
 
             Destroy(gameObject);
 
