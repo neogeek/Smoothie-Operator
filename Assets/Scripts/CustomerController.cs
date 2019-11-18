@@ -78,7 +78,7 @@ namespace SmoothieOperator
 
         }
 
-        private IEnumerator OrderFulFilled()
+        public IEnumerator OrderFulFilled()
         {
 
             yield return _delayExitAnimation;
