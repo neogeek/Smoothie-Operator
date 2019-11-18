@@ -9,8 +9,6 @@ namespace SmoothieOperator
     public class CustomerController : MonoBehaviour
     {
 
-        private const int SECONDS_REMAINING_BEFORE_SHOWING_TIMER = 30;
-
         private const int SECOND_BEFORE_CUSTOMER_LEAVES = 60;
 
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
@@ -53,7 +51,7 @@ namespace SmoothieOperator
 
                 _timer -= 1;
 
-                if (_timer <= SECONDS_REMAINING_BEFORE_SHOWING_TIMER && !_timerTextComp.enabled)
+                if (_timer <= SECOND_BEFORE_CUSTOMER_LEAVES / 2 && !_timerTextComp.enabled)
                 {
 
                     _timerTextComp.enabled = true;
