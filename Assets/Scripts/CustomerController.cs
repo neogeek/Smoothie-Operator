@@ -15,6 +15,10 @@ namespace SmoothieOperator
 
         public Order order;
 
+        public delegate void CustomerEventHandler(CustomerController customerController);
+
+        public CustomerEventHandler OrderCanceled;
+
 #pragma warning disable CS0649
         [SerializeField]
         private SpriteRenderer[] _fruitSpriteRenderers;
@@ -61,6 +65,10 @@ namespace SmoothieOperator
                 _timerTextComp.text = _timer.ToString();
 
             }
+
+            OrderCanceled?.Invoke(this);
+
+            Destroy(gameObject);
 
         }
 
