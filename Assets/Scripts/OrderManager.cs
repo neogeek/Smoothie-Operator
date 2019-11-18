@@ -72,6 +72,8 @@ namespace SmoothieOperator
                 }
             };
 
+            customerController.OrderCanceled += HandleOrderCanceled;
+
             _customers.Add(spawnTransform, customerController);
 
         }
@@ -101,6 +103,13 @@ namespace SmoothieOperator
 
             return _fruitPrefabs.First(f =>
                 f.GetComponent<FruitController>().fruit.Equals(fruitNeededByCustomer.First()));
+
+        }
+
+        private void HandleOrderCanceled(CustomerController customerController)
+        {
+
+            _customers.Remove(_customers.First(customer => customer.Value.Equals(customerController)).Key);
 
         }
 
