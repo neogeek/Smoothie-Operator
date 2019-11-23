@@ -143,6 +143,15 @@ namespace SmoothieOperator
 
             }
 
+            Clear();
+
+            _flushSoundAudioSources[Random.Range(0, _flushSoundAudioSources.Length - 1)].Play();
+
+        }
+
+        private void Clear()
+        {
+
             foreach (var blendedSpriteAtlasHelper in _blendedSpriteAtlasHelpers)
             {
 
@@ -151,8 +160,6 @@ namespace SmoothieOperator
             }
 
             _collectedFruits.Clear();
-
-            _flushSoundAudioSources[Random.Range(0, _flushSoundAudioSources.Length - 1)].Play();
 
         }
 
