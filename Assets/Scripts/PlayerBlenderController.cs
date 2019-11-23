@@ -111,18 +111,9 @@ namespace SmoothieOperator
         private void Blend()
         {
 
-            if (_collectedFruits.Count.Equals(_blendedSpriteAtlasHelpers.Length))
+            if (_collectedFruits.Count.Equals(_blendedSpriteAtlasHelpers.Length) || !_collectibleFruit)
             {
-
                 return;
-
-            }
-
-            if (!_collectibleFruit)
-            {
-
-                return;
-
             }
 
             var fruit = _collectibleFruit.collider.gameObject.GetComponent<FruitController>().fruit;
