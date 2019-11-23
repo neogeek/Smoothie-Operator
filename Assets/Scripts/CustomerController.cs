@@ -11,6 +11,8 @@ namespace SmoothieOperator
 
         private const int SECOND_BEFORE_CUSTOMER_LEAVES = 60;
 
+        private static readonly int AnimationVictory = Animator.StringToHash("Victory");
+
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
 
         private readonly WaitForSecondsRealtime _delayExitAnimation = new WaitForSecondsRealtime(2);
@@ -24,6 +26,9 @@ namespace SmoothieOperator
         public CustomerEventHandler OrderFulFilledEvent;
 
 #pragma warning disable CS0649
+        [SerializeField]
+        private Animator _animator;
+
         [SerializeField]
         private SpriteRenderer[] _fruitSpriteRenderers;
 
@@ -87,6 +92,8 @@ namespace SmoothieOperator
 
         public IEnumerator OrderFulFilled()
         {
+
+            _animator.SetTrigger(AnimationVictory);
 
             yield return _delayExitAnimation;
 
