@@ -39,6 +39,8 @@ namespace SmoothieOperator
 
         private FruitSpawner _fruitSpawner;
 
+        private OrderManager _orderManager;
+
         private bool isGrounded;
 
         private float _horizontalMovement;
@@ -52,10 +54,19 @@ namespace SmoothieOperator
 
             _fruitSpawner = FindObjectOfType<FruitSpawner>();
 
+            _orderManager = FindObjectOfType<OrderManager>();
+
             if (_fruitSpawner == null)
             {
 
                 Debug.LogError("Fruit Spawner not found!");
+
+            }
+
+            if (_orderManager == null)
+            {
+
+                Debug.LogError("Order Manager not found!");
 
             }
 
