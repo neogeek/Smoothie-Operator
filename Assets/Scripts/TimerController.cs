@@ -7,6 +7,8 @@ namespace SmoothieOperator
     public class TimerController : MonoBehaviour
     {
 
+        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
+
 #pragma warning disable CS0649
         [SerializeField]
         private TimerReference _timerReference;
@@ -36,7 +38,7 @@ namespace SmoothieOperator
             while (true)
             {
 
-                yield return new WaitForSecondsRealtime(1);
+                yield return _delayTimer;
 
                 _timerReference.timer += 1;
 
