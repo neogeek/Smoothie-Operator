@@ -81,8 +81,24 @@ namespace SmoothieOperator
 
         }
 
+        private void StopTimer()
+        {
+
+            if (_timerCoroutine == null)
+            {
+                return;
+            }
+
+            StopCoroutine(_timerCoroutine);
+
+            _timerCoroutine = null;
+
+        }
+
         private IEnumerator OrderCanceled()
         {
+
+            StopTimer();
 
             yield return _delayExitAnimation;
 
@@ -94,6 +110,8 @@ namespace SmoothieOperator
 
         public IEnumerator OrderFulFilled()
         {
+
+            StopTimer();
 
             _animator.SetTrigger(AnimationVictory);
 
