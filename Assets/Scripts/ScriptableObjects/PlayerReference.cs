@@ -17,6 +17,25 @@ namespace SmoothieOperator
         [NonSerialized]
         public int score;
 
+        public void LifeLost()
+        {
+
+            if (lives >= 1)
+            {
+
+                lives -= 1;
+
+            }
+
+            if (lives == 0)
+            {
+
+                Debug.Log("Game over.");
+
+            }
+
+        }
+
     }
 
 }
