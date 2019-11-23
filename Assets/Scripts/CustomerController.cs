@@ -77,7 +77,7 @@ namespace SmoothieOperator
 
             }
 
-            StartCoroutine(OrderCanceled());
+            OrderCanceled();
 
         }
 
@@ -95,12 +95,10 @@ namespace SmoothieOperator
 
         }
 
-        private IEnumerator OrderCanceled()
+        private void OrderCanceled()
         {
 
             StopTimer();
-
-            yield return _delayExitAnimation;
 
             OrderCanceledEvent?.Invoke(this);
 
