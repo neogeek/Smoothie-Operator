@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1636f1761d6ba4b159d89c11525b12a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerReference: {fileID: 11400000, guid: 1cfe491b3d6344e718229ffc739e642f, type: 2}
   _animator: {fileID: 420234790}
   _fruitSpriteRenderers:
   - {fileID: 9135662947853287774}

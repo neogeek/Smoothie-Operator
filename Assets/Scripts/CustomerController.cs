@@ -27,6 +27,9 @@ namespace SmoothieOperator
 
 #pragma warning disable CS0649
         [SerializeField]
+        private PlayerReference _playerReference;
+
+        [SerializeField]
         private Animator _animator;
 
         [SerializeField]
