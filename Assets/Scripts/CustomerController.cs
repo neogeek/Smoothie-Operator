@@ -36,6 +36,8 @@ namespace SmoothieOperator
         private Text _timerTextComp;
 #pragma warning restore CS0649
 
+        private Coroutine _timerCoroutine;
+
         private int _timer = SECOND_BEFORE_CUSTOMER_LEAVES;
 
         private void Start()
@@ -48,7 +50,7 @@ namespace SmoothieOperator
 
             }
 
-            StartCoroutine(CustomerTimer());
+            _timerCoroutine = StartCoroutine(CustomerTimer());
 
         }
 
