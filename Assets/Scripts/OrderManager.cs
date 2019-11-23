@@ -74,6 +74,8 @@ namespace SmoothieOperator
 
             customerController.OrderCanceledEvent += HandleOrderCanceled;
 
+            customerController.OrderFulFilledEvent += HandleOrderFulFilled;
+
             _customers.Add(spawnTransform, customerController);
 
         }
@@ -110,6 +112,35 @@ namespace SmoothieOperator
         {
 
             _customers.Remove(_customers.First(customer => customer.Value.Equals(customerController)).Key);
+
+        }
+
+        private void HandleOrderFulFilled(CustomerController customerController)
+        {
+
+            _customers.Remove(_customers.First(customer => customer.Value.Equals(customerController)).Key);
+
+        }
+
+        public bool CanFruitsFulfillAnOrder(Fruit[] fruits)
+        {
+
+            foreach (var customer in _customers)
+            {
+
+                if (customer.Value.order.fruits.Length != fruits.Length ||
+                    customer.Value.order.fruits.Except(fruits).Any())
+                {
+                    continue;
+                }
+
+                StartCoroutine(customer.Value.OrderFulFilled());
+
+                return true;
+
+            }
+
+            return false;
 
         }
 

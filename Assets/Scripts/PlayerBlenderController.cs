@@ -96,6 +96,7 @@ namespace SmoothieOperator
             {
 
                 Blend();
+                CheckOrder();
 
             }
 
@@ -125,6 +126,18 @@ namespace SmoothieOperator
             _fruitSpawner.DestroyFruit(_collectibleFruit.collider.gameObject);
 
             _blendSoundAudioSources[Random.Range(0, _blendSoundAudioSources.Length - 1)].Play();
+
+        }
+
+        private void CheckOrder()
+        {
+
+            if (_orderManager.CanFruitsFulfillAnOrder(_collectedFruits.ToArray()))
+            {
+
+                Clear();
+
+            }
 
         }
 
