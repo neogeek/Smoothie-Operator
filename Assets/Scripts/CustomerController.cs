@@ -107,6 +107,8 @@ namespace SmoothieOperator
 
             Destroy(gameObject);
 
+            _playerReference.LifeLost();
+
         }
 
         public IEnumerator OrderFulFilled()
