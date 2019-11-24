@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SmoothieOperator
 {
 
-    public class OrderManager : MonoBehaviour
+    public class OrderManager : MonoBehaviour, IPausable
     {
 
         private readonly WaitForSeconds _delayBetweenSpawningNewCustomers = new WaitForSeconds(1);
@@ -25,7 +25,16 @@ namespace SmoothieOperator
         private readonly Dictionary<Transform, CustomerController> _customers =
             new Dictionary<Transform, CustomerController>();
 
-        private IEnumerator Start()
+        private Coroutine _spawnCustomersCoroutine;
+
+        private void Start()
+        {
+
+            _spawnCustomersCoroutine = StartCoroutine(SpawnCustomers());
+
+        }
+
+        private IEnumerator SpawnCustomers()
         {
 
             while (true)
@@ -141,6 +150,27 @@ namespace SmoothieOperator
             }
 
             return false;
+
+        }
+
+        public void Pause()
+        {
+
+            if (_spawnCustomersCoroutine == null)
+            {
+                return;
+            }
+
+            StopCoroutine(_spawnCustomersCoroutine);
+
+            _spawnCustomersCoroutine = null;
+
+        }
+
+        public void Resume()
+        {
+
+            _spawnCustomersCoroutine = StartCoroutine(SpawnCustomers());
 
         }
 

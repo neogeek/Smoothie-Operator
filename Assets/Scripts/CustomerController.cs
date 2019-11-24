@@ -6,7 +6,7 @@ namespace SmoothieOperator
 {
 
     [SelectionBaseAttribute]
-    public class CustomerController : MonoBehaviour
+    public class CustomerController : MonoBehaviour, IPausable
     {
 
         private const int SECOND_BEFORE_CUSTOMER_LEAVES = 60;
@@ -123,6 +123,27 @@ namespace SmoothieOperator
             OrderFulFilledEvent?.Invoke(this);
 
             Destroy(gameObject);
+
+        }
+
+        public void Pause()
+        {
+
+            if (_timerCoroutine == null)
+            {
+                return;
+            }
+
+            StopCoroutine(_timerCoroutine);
+
+            _timerCoroutine = null;
+
+        }
+
+        public void Resume()
+        {
+
+            _timerCoroutine = StartCoroutine(CustomerTimer());
 
         }
 

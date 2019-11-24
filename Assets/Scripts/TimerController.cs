@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SmoothieOperator
 {
 
-    public class TimerController : MonoBehaviour
+    public class TimerController : MonoBehaviour, IPausable
     {
 
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
@@ -21,14 +21,7 @@ namespace SmoothieOperator
 
             _timerReference.Reset();
 
-            StartTimer();
-
-        }
-
-        public void StartTimer()
-        {
-
-            _timerCoroutine = StartCoroutine(Tick());
+            Resume();
 
         }
 
@@ -46,7 +39,14 @@ namespace SmoothieOperator
 
         }
 
-        public void StopTimer()
+        public void Resume()
+        {
+
+            _timerCoroutine = StartCoroutine(Tick());
+
+        }
+
+        public void Pause()
         {
 
             if (_timerCoroutine == null)
