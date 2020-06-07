@@ -25,11 +25,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a98b18ef9ca4a46a998243c12fe05030,
         type: 3}
-    - target: {fileID: 138724432132760694, guid: 6c679fd238c9346bb99c528bf617db21,
-        type: 3}
-      propertyPath: m_Name
-      value: Fruit 5
-      objectReference: {fileID: 0}
     - target: {fileID: 138724432132760689, guid: 6c679fd238c9346bb99c528bf617db21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,5 +86,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7ee915829f56c46ecb52167aa015cd6e,
         type: 3}
+    - target: {fileID: 138724432132760694, guid: 6c679fd238c9346bb99c528bf617db21,
+        type: 3}
+      propertyPath: m_Name
+      value: Fruit 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c679fd238c9346bb99c528bf617db21, type: 3}

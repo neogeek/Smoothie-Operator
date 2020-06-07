@@ -518,11 +518,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3067453415397891744}
     m_Modifications:
-    - target: {fileID: 4217370933511746175, guid: 424da7b5eb2674ca791bb0cdd29024b6,
-        type: 3}
-      propertyPath: m_Name
-      value: Order Bubble
-      objectReference: {fileID: 0}
     - target: {fileID: 1892762201941445995, guid: 424da7b5eb2674ca791bb0cdd29024b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -578,6 +573,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4152100117360866506, guid: 424da7b5eb2674ca791bb0cdd29024b6,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217370933511746175, guid: 424da7b5eb2674ca791bb0cdd29024b6,
+        type: 3}
+      propertyPath: m_Name
+      value: Order Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761343551251227280, guid: 424da7b5eb2674ca791bb0cdd29024b6,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7658072990248220207, guid: 424da7b5eb2674ca791bb0cdd29024b6,
         type: 3}
       propertyPath: m_SortingOrder
@@ -587,16 +597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6761343551251227280, guid: 424da7b5eb2674ca791bb0cdd29024b6,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4152100117360866506, guid: 424da7b5eb2674ca791bb0cdd29024b6,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 424da7b5eb2674ca791bb0cdd29024b6, type: 3}
