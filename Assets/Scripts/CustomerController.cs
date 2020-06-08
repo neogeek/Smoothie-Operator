@@ -128,6 +128,8 @@ namespace SmoothieOperator
 
             OrderFulFilledEvent?.Invoke(this);
 
+            _playerReference.AddPointsToScore(_points);
+
             Destroy(gameObject);
 
         }

@@ -36,6 +36,13 @@ namespace SmoothieOperator
 
         }
 
+        public void AddPointsToScore(int points)
+        {
+
+            score += points;
+
+        }
+
     }
 
 }
