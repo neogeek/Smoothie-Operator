@@ -33,6 +33,8 @@ namespace SmoothieOperator
 
         private float _delayBetweenSpawningNewCustomers = MAX_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS;
 
+        private System.Random _random = new System.Random();
+
         private void Start()
         {
 
@@ -62,7 +64,8 @@ namespace SmoothieOperator
         private void SpawnNewCustomer()
         {
 
-            var spawnTransform = _customerTransforms.First(t => !_customers.ContainsKey(t));
+            var spawnTransform = _customerTransforms.OrderBy(_ => _random.Next())
+                .First(t => !_customers.ContainsKey(t));
 
             if (!spawnTransform)
             {
