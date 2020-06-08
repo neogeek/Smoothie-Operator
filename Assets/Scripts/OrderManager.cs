@@ -9,7 +9,11 @@ namespace SmoothieOperator
     public class OrderManager : MonoBehaviour, IPausable
     {
 
-        private readonly WaitForSeconds _delayBetweenSpawningNewCustomers = new WaitForSeconds(1);
+        private const float MAX_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS = 10;
+
+        private const float MIN_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS = 1;
+
+        private const float DELTA_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS = 0.25f;
 
 #pragma warning disable CS0649
         [SerializeField]
@@ -27,6 +31,8 @@ namespace SmoothieOperator
 
         private Coroutine _spawnCustomersCoroutine;
 
+        private float _delayBetweenSpawningNewCustomers = MAX_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS;
+
         private void Start()
         {
 
@@ -40,14 +46,14 @@ namespace SmoothieOperator
             while (true)
             {
 
+                yield return new WaitForSeconds(_delayBetweenSpawningNewCustomers);
+
                 if (_customers.Count < _customerTransforms.Length)
                 {
 
                     SpawnNewCustomer();
 
                 }
-
-                yield return _delayBetweenSpawningNewCustomers;
 
             }
 
@@ -86,6 +92,11 @@ namespace SmoothieOperator
             customerController.OrderFulFilledEvent += HandleOrderFulFilled;
 
             _customers.Add(spawnTransform, customerController);
+
+            _delayBetweenSpawningNewCustomers = Mathf.Clamp(
+                _delayBetweenSpawningNewCustomers - DELTA_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS,
+                MIN_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS,
+                MAX_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS);
 
         }
 
