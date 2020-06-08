@@ -25,7 +25,7 @@ namespace SmoothieOperator
         private void Update()
         {
 
-            _textComp.text = $"{_playerReference.score} Points";
+            _textComp.text = $"{_playerReference.score:N0} Points";
 
         }
 
