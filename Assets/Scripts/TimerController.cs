@@ -19,8 +19,6 @@ namespace SmoothieOperator
         private void Awake()
         {
 
-            _timerReference.Reset();
-
             Resume();
 
         }

@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pausedCanvas: {fileID: 845579149}
   _playerReference: {fileID: 11400000, guid: 1cfe491b3d6344e718229ffc739e642f, type: 2}
+  _timerReference: {fileID: 11400000, guid: e384777d64e314263902335086f2c34f, type: 2}
 --- !u!4 &435760788
 Transform:
   m_ObjectHideFlags: 0

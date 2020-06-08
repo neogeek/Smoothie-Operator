@@ -13,12 +13,16 @@ namespace SmoothieOperator
 
         [SerializeField]
         private PlayerReference _playerReference;
+
+        [SerializeField]
+        private TimerReference _timerReference;
 #pragma warning restore CS0649
 
         private void Start()
         {
 
             _playerReference.Reset();
+            _timerReference.Reset();
 
         }
 
