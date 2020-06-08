@@ -11,6 +11,8 @@ namespace SmoothieOperator
 
         private const int SECOND_BEFORE_CUSTOMER_LEAVES = 60;
 
+        private const int MAX_POINTS_FOR_ORDER = 100;
+
         private static readonly int AnimationVictory = Animator.StringToHash("Victory");
 
         private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
@@ -43,6 +45,8 @@ namespace SmoothieOperator
 
         private int _timer = SECOND_BEFORE_CUSTOMER_LEAVES;
 
+        private int _points = MAX_POINTS_FOR_ORDER;
+
         private void Start()
         {
 
@@ -68,6 +72,8 @@ namespace SmoothieOperator
                 yield return _delayTimer;
 
                 _timer -= 1;
+
+                _points -= 1;
 
                 if (_timer <= SECOND_BEFORE_CUSTOMER_LEAVES / 2 && !_timerTextComp.enabled)
                 {
