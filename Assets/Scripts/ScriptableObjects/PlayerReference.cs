@@ -43,6 +43,15 @@ namespace SmoothieOperator
 
         }
 
+        public void Reset()
+        {
+
+            lives = STARTING_LIVES;
+
+            score = 0;
+
+        }
+
     }
 
 }

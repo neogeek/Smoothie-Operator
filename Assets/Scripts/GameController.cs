@@ -10,7 +10,17 @@ namespace SmoothieOperator
 #pragma warning disable CS0649
         [SerializeField]
         private Canvas _pausedCanvas;
+
+        [SerializeField]
+        private PlayerReference _playerReference;
 #pragma warning restore CS0649
+
+        private void Start()
+        {
+
+            _playerReference.Reset();
+
+        }
 
         public void Pause()
         {
