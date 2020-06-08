@@ -16,7 +16,7 @@ namespace SmoothieOperator
 
         private Coroutine _timerCoroutine;
 
-        private void Awake()
+        private void Start()
         {
 
             Resume();
