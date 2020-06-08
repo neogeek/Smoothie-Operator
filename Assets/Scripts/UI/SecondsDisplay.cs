@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,9 @@ namespace SmoothieOperator
         private void Update()
         {
 
-            _textComp.text = $"{_timerReference.timer} Seconds";
+            var timer = TimeSpan.FromSeconds(_timerReference.timer);
+
+            _textComp.text = $"{timer.TotalSeconds} Seconds";
 
         }
 
