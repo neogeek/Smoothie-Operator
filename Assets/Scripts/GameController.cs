@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SmoothieOperator
 {
@@ -75,6 +76,25 @@ namespace SmoothieOperator
                 Pause();
 
             }
+
+        }
+
+        public void GameOver(int score)
+        {
+
+            Time.timeScale = 0;
+
+            _gameOverCanvas.enabled = true;
+
+            _highScoreReference.AddScore("AAA", score);
+            _highScoreReference.Save();
+
+        }
+
+        public void ReloadLevel()
+        {
+
+            SceneManager.LoadScene("Game");
 
         }
 

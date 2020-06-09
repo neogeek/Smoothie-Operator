@@ -936,6 +936,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Over Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 435760787}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944267033957251168, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8065772682583023924, guid: d65fb1ddafe604cdf865e0d90a31dfa2,
         type: 3}
       propertyPath: m_AnchorMin.y

@@ -34,6 +34,13 @@ namespace SmoothieOperator
 
         }
 
+        public void AddScore(string playerName, int score)
+        {
+
+            highScores.Add(playerName, score);
+
+        }
+
     }
 
 }

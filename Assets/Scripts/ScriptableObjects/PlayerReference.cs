@@ -30,7 +30,7 @@ namespace SmoothieOperator
             if (lives == 0)
             {
 
-                Debug.Log("Game over.");
+                FindObjectOfType<GameController>().GameOver(score);
 
             }
 
