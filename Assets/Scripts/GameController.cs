@@ -16,6 +16,9 @@ namespace SmoothieOperator
 
         [SerializeField]
         private TimerReference _timerReference;
+
+        [SerializeField]
+        private HighScoreReference _highScoreReference;
 #pragma warning restore CS0649
 
         private void Start()
@@ -23,6 +26,8 @@ namespace SmoothieOperator
 
             _playerReference.Reset();
             _timerReference.Reset();
+
+            _highScoreReference.Load();
 
         }
 
