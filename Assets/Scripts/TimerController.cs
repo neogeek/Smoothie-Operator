@@ -7,7 +7,7 @@ namespace SmoothieOperator
     public class TimerController : MonoBehaviour, IPausable
     {
 
-        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
+        private readonly WaitForSeconds _delayTimer = new WaitForSeconds(1);
 
 #pragma warning disable CS0649
         [SerializeField]

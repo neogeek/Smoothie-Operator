@@ -15,9 +15,9 @@ namespace SmoothieOperator
 
         private static readonly int AnimationVictory = Animator.StringToHash("Victory");
 
-        private readonly WaitForSecondsRealtime _delayTimer = new WaitForSecondsRealtime(1);
+        private readonly WaitForSeconds _delayTimer = new WaitForSeconds(1);
 
-        private readonly WaitForSecondsRealtime _delayExitAnimation = new WaitForSecondsRealtime(2);
+        private readonly WaitForSeconds _delayExitAnimation = new WaitForSeconds(2);
 
         public Order order;
 
