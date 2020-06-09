@@ -15,7 +15,7 @@ In the not-so distant future where food trucks are in such high demand that they
 Built for the [Purple Monkey Game Jam](https://purplemonkeygamejam.com/) in March 2015
 
 - Designer - [Rich Leonardo](https://twitter.com/Damperzero) of [Forge Ahead Studios](https://twitter.com/ForgeAheadNow)
-- Audio SFX/Music - [Oliver Getz](https://twitter.com/sjatrik)
+- Sound Designer - [Oliver Getz](https://twitter.com/sjatrik)
 - Developer - [Michael Leonardo](https://twitter.com/neztec) of [Forge Ahead Studios](https://twitter.com/ForgeAheadNow)
 - Developer - [Scott Doxey](https://twitter.com/neogeek)
 - Developer - Travis Beebe
