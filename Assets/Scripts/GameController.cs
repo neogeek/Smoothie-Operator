@@ -12,6 +12,9 @@ namespace SmoothieOperator
         private Canvas _pausedCanvas;
 
         [SerializeField]
+        private Canvas _gameOverCanvas;
+
+        [SerializeField]
         private PlayerReference _playerReference;
 
         [SerializeField]
