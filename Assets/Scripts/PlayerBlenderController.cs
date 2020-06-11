@@ -42,7 +42,7 @@ namespace SmoothieOperator
 
         private float _horizontalMovement;
 
-        private RaycastHit2D _collectibleFruit;
+        private RaycastHit2D[] _collectibleFruits;
 
         private readonly List<Fruit> _collectedFruits = new List<Fruit>();
 
@@ -74,11 +74,11 @@ namespace SmoothieOperator
         private void Update()
         {
 
-            _collectibleFruit = Physics2D.BoxCast(gameObject.transform.position, _boxCollider2D.bounds.size, 0,
+            _collectibleFruits = Physics2D.BoxCastAll(gameObject.transform.position, _boxCollider2D.bounds.size, 0,
                 Vector2.zero,
                 0, FruitController.layerMask);
 
-            if (_collectibleFruit && _collectedFruits.Count < _blendedSpriteAtlasHelpers.Length)
+            if (_collectibleFruits.Length > 0 && _collectedFruits.Count < _blendedSpriteAtlasHelpers.Length)
             {
 
                 _blenderSpriteAtlasHelper.SetSpriteRenderer(_spriteBlenderHighlight);
@@ -111,18 +111,20 @@ namespace SmoothieOperator
         private void Blend()
         {
 
-            if (_collectedFruits.Count.Equals(_blendedSpriteAtlasHelpers.Length) || !_collectibleFruit)
+            if (_collectibleFruits.Length == 0 || _collectedFruits.Count.Equals(_blendedSpriteAtlasHelpers.Length))
             {
                 return;
             }
 
-            var fruit = _collectibleFruit.collider.gameObject.GetComponent<FruitController>().fruit;
+            var collectibleFruit = _collectibleFruits.First();
+
+            var fruit = collectibleFruit.collider.gameObject.GetComponent<FruitController>().fruit;
 
             _collectedFruits.Add(fruit);
 
             _blendedSpriteAtlasHelpers[_collectedFruits.Count - 1].SetSpriteRenderer(fruit.blended);
 
-            _fruitSpawner.DestroyFruit(_collectibleFruit.collider.gameObject);
+            _fruitSpawner.DestroyFruit(collectibleFruit.collider.gameObject);
 
             PlaySFX("blender_blend");
 
