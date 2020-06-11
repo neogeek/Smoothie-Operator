@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +48,8 @@ namespace SmoothieOperator
 
         private int _points = MAX_POINTS_FOR_ORDER;
 
+        private AudioSource[] _sfxAudioSources;
+
         private void Start()
         {
 
@@ -58,6 +61,8 @@ namespace SmoothieOperator
             }
 
             _timerCoroutine = StartCoroutine(CustomerTimer());
+
+            _sfxAudioSources = GetComponentsInChildren<AudioSource>();
 
         }
 
@@ -122,6 +127,8 @@ namespace SmoothieOperator
 
             StopTimer();
 
+            PlaySFX("customer_slurp");
+
             _animator.SetTrigger(AnimationVictory);
 
             yield return _delayExitAnimation;
@@ -152,6 +159,15 @@ namespace SmoothieOperator
         {
 
             _timerCoroutine = StartCoroutine(CustomerTimer());
+
+        }
+
+        private void PlaySFX(string filter)
+        {
+
+            var sources = _sfxAudioSources.Where(source => source.clip.name.StartsWith(filter)).ToList();
+
+            sources[Random.Range(0, sources.Count - 1)].Play();
 
         }
 
