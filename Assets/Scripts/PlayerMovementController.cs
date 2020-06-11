@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace SmoothieOperator
 {
@@ -20,7 +21,7 @@ namespace SmoothieOperator
 
         private AudioSource[] _sfxAudioSources;
 
-        private bool isGrounded;
+        private bool _isGrounded;
 
         private float _horizontalMovement;
 
@@ -35,16 +36,12 @@ namespace SmoothieOperator
 
         }
 
-        private void Update()
+        private void OnMovement(InputValue value)
         {
 
-            _horizontalMovement = Input.GetAxis("Horizontal");
+            _horizontalMovement = value.Get<Vector2>().x;
 
-            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, TruckController.layerMask);
-
-            isGrounded = hit.distance < GROUND_TEST_DISTANCE;
-
-            if (Mathf.Abs(_horizontalMovement) > 0.5f && isGrounded)
+            if (Mathf.Abs(_horizontalMovement) > 0.5f && _isGrounded)
             {
 
                 if (_horizontalMovementSFX == null)
@@ -64,25 +61,45 @@ namespace SmoothieOperator
 
             }
 
-            if (isGrounded && _rigidbody2D.velocity.y < -1.5f)
+        }
+
+        private void OnJumpPrepare()
+        {
+
+            if (!_isGrounded)
+            {
+                return;
+            }
+
+            PlaySFX("blender_jump_prepare");
+
+        }
+
+        private void OnJumpRelease()
+        {
+
+            if (!_isGrounded)
+            {
+                return;
+            }
+
+            _rigidbody2D.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
+
+            PlaySFX("blender_jump_release");
+
+        }
+
+        private void Update()
+        {
+
+            var hit = Physics2D.Raycast(gameObject.transform.position, Vector3.down, 10f, TruckController.layerMask);
+
+            _isGrounded = hit.distance < GROUND_TEST_DISTANCE;
+
+            if (_isGrounded && _rigidbody2D.velocity.y < -1.5f)
             {
 
                 PlaySFX("blender_land");
-
-            }
-
-            if (isGrounded && Input.GetButtonDown("Jump"))
-            {
-
-                PlaySFX("blender_jump_prepare");
-
-            }
-            else if (isGrounded && Input.GetButtonUp("Jump"))
-            {
-
-                _rigidbody2D.AddForce(Vector2.up * JUMP_FORCE, ForceMode2D.Impulse);
-
-                PlaySFX("blender_jump_release");
 
             }
 

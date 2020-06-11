@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ namespace SmoothieOperator
         private Image _keyboardControlsImage;
 #pragma warning restore CS0649
 
-        private bool ControllerConnected => Input.GetJoystickNames().Length > 0;
+        private bool ControllerConnected => Gamepad.current != null && Gamepad.current.name.Contains("Gamepad");
 
         private void Start()
         {
@@ -26,15 +27,10 @@ namespace SmoothieOperator
 
         }
 
-        private void Update()
+        private void OnStart()
         {
 
-            if (Input.anyKeyDown)
-            {
-
-                SceneManager.LoadScene("Game");
-
-            }
+            SceneManager.LoadScene("Game");
 
         }
 

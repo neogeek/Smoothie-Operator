@@ -71,6 +71,21 @@ namespace SmoothieOperator
 
         }
 
+        private void OnBlend()
+        {
+
+            Blend();
+            CheckOrder();
+
+        }
+
+        private void OnFlush()
+        {
+
+            Flush();
+
+        }
+
         private void Update()
         {
 
@@ -88,21 +103,6 @@ namespace SmoothieOperator
             {
 
                 _blenderSpriteAtlasHelper.SetSpriteRenderer(_spriteBlenderDefault);
-
-            }
-
-            if (Input.GetButtonDown("Blend"))
-            {
-
-                Blend();
-                CheckOrder();
-
-            }
-
-            if (Input.GetButtonDown("Flush"))
-            {
-
-                Flush();
 
             }
 

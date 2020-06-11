@@ -7,15 +7,10 @@ namespace SmoothieOperator
     public class TitleSceneController : MonoBehaviour
     {
 
-        private void Update()
+        private void OnStart()
         {
 
-            if (Input.anyKeyDown)
-            {
-
-                SceneManager.LoadScene("Controls");
-
-            }
+            SceneManager.LoadScene("Controls");
 
         }
 
