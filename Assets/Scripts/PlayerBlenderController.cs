@@ -116,7 +116,11 @@ namespace SmoothieOperator
                 return;
             }
 
-            var collectibleFruit = _collectibleFruits.First();
+            var collectibleFruits = _collectibleFruits.Where(c => _orderManager.IsFruitPartOfAnOrder(_collectedFruits,
+                c.collider.gameObject.GetComponent<FruitController>().fruit));
+
+            var collectibleFruit =
+                collectibleFruits.Any() ? collectibleFruits.First() : _collectibleFruits.First();
 
             var fruit = collectibleFruit.collider.gameObject.GetComponent<FruitController>().fruit;
 

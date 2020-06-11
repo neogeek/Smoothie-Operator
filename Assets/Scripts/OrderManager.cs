@@ -167,6 +167,27 @@ namespace SmoothieOperator
 
         }
 
+        public bool IsFruitPartOfAnOrder(List<Fruit> blendedFruit, Fruit testFruit)
+        {
+
+            var testFruits = new List<Fruit>(blendedFruit);
+
+            testFruits.Add(testFruit);
+
+            foreach (var customer in _customers)
+            {
+
+                if (customer.Value.order.fruits.Intersect(testFruits).Any())
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+
+        }
+
         public void Pause()
         {
 
