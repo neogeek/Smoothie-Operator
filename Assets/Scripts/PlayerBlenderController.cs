@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace SmoothieOperator
@@ -29,13 +30,9 @@ namespace SmoothieOperator
 
         [SerializeField]
         private Sprite _spriteBlenderHighlight;
-
-        [SerializeField]
-        private AudioSource[] _blendSoundAudioSources;
-
-        [SerializeField]
-        private AudioSource[] _flushSoundAudioSources;
 #pragma warning restore CS0649
+
+        private AudioSource[] _sfxAudioSources;
 
         private FruitSpawner _fruitSpawner;
 
@@ -69,6 +66,8 @@ namespace SmoothieOperator
                 Debug.LogError("Order Manager not found!");
 
             }
+
+            _sfxAudioSources = GetComponentsInChildren<AudioSource>();
 
         }
 
@@ -125,7 +124,7 @@ namespace SmoothieOperator
 
             _fruitSpawner.DestroyFruit(_collectibleFruit.collider.gameObject);
 
-            _blendSoundAudioSources[Random.Range(0, _blendSoundAudioSources.Length - 1)].Play();
+            PlaySFX("blender_blend");
 
         }
 
@@ -158,7 +157,7 @@ namespace SmoothieOperator
 
             Clear();
 
-            _flushSoundAudioSources[Random.Range(0, _flushSoundAudioSources.Length - 1)].Play();
+            PlaySFX("blender_flush");
 
         }
 
@@ -173,6 +172,15 @@ namespace SmoothieOperator
             }
 
             _collectedFruits.Clear();
+
+        }
+
+        private void PlaySFX(string filter)
+        {
+
+            var sources = _sfxAudioSources.Where(source => source.clip.name.StartsWith(filter)).ToList();
+
+            sources[Random.Range(0, sources.Count - 1)].Play();
 
         }
 
