@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -12,7 +13,7 @@ namespace SmoothieOperator
 
         public static string path => Path.Combine(Application.persistentDataPath, "highScores.json");
 
-        public Dictionary<string, int> highScores = new Dictionary<string, int>();
+        public List<Tuple<string, int>> highScores = new List<Tuple<string, int>>();
 
         public void Save()
         {
@@ -28,7 +29,7 @@ namespace SmoothieOperator
             if (File.Exists(path))
             {
 
-                highScores = JsonConvert.DeserializeObject<Dictionary<string, int>>(File.ReadAllText(path));
+                highScores = JsonConvert.DeserializeObject<List<Tuple<string, int>>>(File.ReadAllText(path));
 
             }
 
@@ -37,7 +38,7 @@ namespace SmoothieOperator
         public void AddScore(string playerName, int score)
         {
 
-            highScores.Add(playerName, score);
+            highScores.Add(new Tuple<string, int>(playerName, score));
 
         }
 
