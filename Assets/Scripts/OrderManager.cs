@@ -179,7 +179,7 @@ namespace SmoothieOperator
             foreach (var customer in _customers)
             {
 
-                if (customer.Value.order.fruits.Intersect(testFruits).Any())
+                if (new HashSet<Fruit>(testFruits).IsSubsetOf(new HashSet<Fruit>(customer.Value.order.fruits)))
                 {
                     return true;
                 }
