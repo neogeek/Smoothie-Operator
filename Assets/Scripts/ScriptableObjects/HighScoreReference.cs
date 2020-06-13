@@ -38,7 +38,12 @@ namespace SmoothieOperator
         public void AddScore(string playerName, int score)
         {
 
-            highScores.Add(new Tuple<string, int>(playerName, score));
+            if (score > 0)
+            {
+
+                highScores.Add(new Tuple<string, int>(playerName, score));
+
+            }
 
         }
 
