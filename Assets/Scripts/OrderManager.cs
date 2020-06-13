@@ -170,9 +170,7 @@ namespace SmoothieOperator
         public bool IsFruitPartOfAnOrder(List<Fruit> blendedFruit, Fruit testFruit)
         {
 
-            var testFruits = new List<Fruit>(blendedFruit);
-
-            testFruits.Add(testFruit);
+            var testFruits = new List<Fruit>(blendedFruit) { testFruit };
 
             foreach (var customer in _customers)
             {
