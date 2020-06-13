@@ -8,6 +8,17 @@ namespace SmoothieOperator
     public class GameController : MonoBehaviour
     {
 
+        public enum STATE
+        {
+
+            PLAYING,
+
+            PAUSED,
+
+            GAME_OVER
+
+        }
+
 #pragma warning disable CS0649
         [SerializeField]
         private Canvas _pausedCanvas;
@@ -25,6 +36,8 @@ namespace SmoothieOperator
         private HighScoreReference _highScoreReference;
 #pragma warning restore CS0649
 
+        private STATE _currentState = STATE.PLAYING;
+
         private void Start()
         {
 
@@ -37,6 +50,13 @@ namespace SmoothieOperator
 
         public void Pause()
         {
+
+            if (!_currentState.Equals(STATE.PLAYING))
+            {
+                return;
+            }
+
+            _currentState = STATE.PAUSED;
 
             Time.timeScale = 0;
 
@@ -53,6 +73,13 @@ namespace SmoothieOperator
 
         public void Resume()
         {
+
+            if (_currentState.Equals(STATE.PLAYING))
+            {
+                return;
+            }
+
+            _currentState = STATE.PLAYING;
 
             Time.timeScale = 1;
 
@@ -82,6 +109,8 @@ namespace SmoothieOperator
         public void GameOver(int score)
         {
 
+            _currentState = STATE.GAME_OVER;
+
             Time.timeScale = 0;
 
             _gameOverCanvas.enabled = true;
@@ -95,6 +124,31 @@ namespace SmoothieOperator
         {
 
             SceneManager.LoadScene("Game");
+
+        }
+
+        public void OnPause()
+        {
+
+            Pause();
+
+        }
+
+        public void OnStart()
+        {
+
+            if (_currentState.Equals(STATE.GAME_OVER))
+            {
+
+                ReloadLevel();
+
+            }
+            else
+            {
+
+                Resume();
+
+            }
 
         }
 
