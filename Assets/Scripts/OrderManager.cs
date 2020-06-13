@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 namespace SmoothieOperator
 {
@@ -33,7 +34,7 @@ namespace SmoothieOperator
 
         private float _delayBetweenSpawningNewCustomers = MAX_DELAY_BETWEEN_SPAWNING_NEW_CUSTOMERS;
 
-        private System.Random _random = new System.Random();
+        private readonly Random _random = new Random();
 
         private void Start()
         {
@@ -73,7 +74,7 @@ namespace SmoothieOperator
             }
 
             var spawnedCustomer = Instantiate(
-                _customerPrefabs[Random.Range(0, _customerPrefabs.Length)],
+                _customerPrefabs[UnityEngine.Random.Range(0, _customerPrefabs.Length)],
                 spawnTransform.position,
                 Quaternion.identity,
                 gameObject.transform);
@@ -84,9 +85,12 @@ namespace SmoothieOperator
             {
                 fruits = new[]
                 {
-                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit,
-                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit,
-                    _fruitPrefabs[Random.Range(0, _fruitPrefabs.Length)].GetComponent<FruitController>().fruit
+                    _fruitPrefabs[UnityEngine.Random.Range(0, _fruitPrefabs.Length)]
+                        .GetComponent<FruitController>().fruit,
+                    _fruitPrefabs[UnityEngine.Random.Range(0, _fruitPrefabs.Length)]
+                        .GetComponent<FruitController>().fruit,
+                    _fruitPrefabs[UnityEngine.Random.Range(0, _fruitPrefabs.Length)]
+                        .GetComponent<FruitController>().fruit
                 }
             };
 
