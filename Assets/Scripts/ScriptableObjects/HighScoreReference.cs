@@ -21,6 +21,8 @@ namespace SmoothieOperator
             File.WriteAllText(path,
                 JsonConvert.SerializeObject(highScores, Formatting.Indented));
 
+            Debug.Log($"Saved highscores to {path}");
+
         }
 
         public void Load()
@@ -30,6 +32,8 @@ namespace SmoothieOperator
             {
 
                 highScores = JsonConvert.DeserializeObject<List<Tuple<string, int>>>(File.ReadAllText(path));
+
+                Debug.Log($"Loaded highscores from {path}");
 
             }
 
